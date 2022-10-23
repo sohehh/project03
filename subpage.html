@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/parallax2.js"></script>
+    <script>history.scrollRestoration = "manual"</script>
+    
+    <!-- <script>
+        $(document).ready(function(){
+   
+           var navHeight = $(".sinner h3").height(); 
+           //navHeight 의 높이를 구하기
+   
+           // $(".sinner h3").hide();
+           //스크롤시 나타날 객체 미리 숨기기
+   
+           $(window).scroll(function(){  // 윈도우 스크롤 기능 작동
+               var rollIt = $(this).scrollTop() >= navHeight; 
+           // 스크롤의 정도가 navHeight 의 값을 넘었을 때 == 윈도우 스크롤의 값이 navHeight 의 높이와 같거나 크다
+   
+           /*
+           scrollTop 은 윈도우에서 스크롤의 위치가 가장 상위에 있다는 의미로 해석
+           스크롤의 위치가 화면 아래일수록 == scrollTop 의 값이 커짐
+           */
+   
+           if(rollIt){ 
+               //윈도우 스크롤 기능의 값이 navHeight 의 높이와 같거나 크면
+                   $(".sinner h3").show().css({"color":"pink"});
+                   alert('ddd');
+               }
+               else{
+                   $(".sinner h3").hide();
+               }
+           });
+   
+           });
+               
+       </script> -->
+    <script>
+        /*플레이 나우 허버효과 제이쿼리*/
+        $(function(){
+            $(".playNow ul li a").each(function(){
+                $(this).hover(function(){
+                    $(this).css("color",'#2c6757');
+                    
+                },function(){
+                    $(this).css("color",'black');
+
+                });
+            });
+        });
+    </script>
+    <script>
+        //sns
+        $(function(){
+            $(".sns li").each(function(){
+                $(this).hover(function(){
+                    $(this).stop().animate({ left: 10 }, "500");
+                },function(){
+                    $(this).stop().animate({ left: 0 }, "500");
+
+                });
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            $('.ml1 a').each(function(idx){
+                $(this).click(function(e){
+                    e.preventDefault();
+                        $('.mvs-list a').css('color','black');
+                        $(this).css('color','#2c6757');
+                        if(idx+1==1){
+                            $('iframe').attr('src','https://www.youtube.com/embed/qaaywl-6H4o?autoplay=1&mute=1');
+                            
+                        }else if(idx+1==2){
+                            $('iframe').attr('src','https://www.youtube.com/embed/N7g34GdeZTk?autoplay=1&mute=1');
+                            
+                        }else if(idx+1==3){
+                            $('iframe').attr('src','https://www.youtube.com/embed/l0Sit0FORk4?autoplay=1&mute=1');
+                        }else if(idx+1==4){
+                            $('iframe').attr('src','https://www.youtube.com/embed/uCXepr6wr3I?autoplay=1&mute=1');
+                        }else if(idx+1==5){
+                            $('iframe').attr('src','https://www.youtube.com/embed/NxryzznrhEw?autoplay=1&mute=1');
+                            
+
+                        }else if(idx+1==6){
+                            $('iframe').attr('src','https://www.youtube.com/embed/OvioeS1ZZ7o?autoplay=1&mute=1');
+                            
+
+                        }
+                });
+            });
+            
+            
+            
+        });
+    </script>
+    <script>
+        $(function(){
+            $('.photos-name ul li a').each(function(idx){
+                $(this).click(function(e){
+                    e.preventDefault();
+                    $('.photos-name ul li a').css('color','black');
+                    $(this).css('color','#2c6757');
+                    $('.swiper-wrapper>div img').fadeIn( 900 );
+                    if(idx==0){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery11-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/photos-bh-1.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-bh-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery11-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/photos-bh-1.jpg');
+                    }else if(idx==1){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery10-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/photos-lk-1.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-lk-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery10-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/photos-lk-1.jpg');
+                    }else if(idx==2){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery9-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/gallery20-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-cb-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery9-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/gallery20-a.jpg');
+                    }else if(idx==3){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery8-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/gallery19-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-hj-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery8-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/gallery19-a.jpg');
+                    }else if(idx==4){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery7-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/gallery18-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-han-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery7-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/gallery18-a.jpg');
+                    }else if(idx==5){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery6-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/gallery17-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-fx-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery6-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/gallery17-a.jpg');
+                    }else if(idx==6){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery5-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/gallery16-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-sm-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery5-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/gallery16-a.jpg');
+                    }else if(idx==7){
+                        $('.swiper-wrapper>div:nth-child(1) img').attr('src','./image/gallery4-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(2) img').attr('src','./image/gallery15-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(3) img').attr('src','./image/photos-in-2.jpg');
+                        $('.swiper-wrapper>div:nth-child(4) img').attr('src','./image/gallery4-a.jpg');
+                        $('.swiper-wrapper>div:nth-child(5) img').attr('src','./image/gallery15-a.jpg');
+                    }
+
+                });
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            $(".release-albums-list li a").each(function(){
+                $(this).hover(function(){
+                    $(this).find('span.hover-section').fadeIn(500);
+                    
+                },function(){
+                    $(this).find('span.hover-section').fadeOut(400);
+
+                });
+            });
+        });
+    </script>
+    <script>
+        $(window).scroll(function(){
+        var scrT = $(window).scrollTop();
+        //console.log(scrT); //스크롤 값 확인용
+        if(scrT == $(document).height() - $(window).height()){
+            $('.cop').css('display','block');
+        } else {
+            //아닐때 이벤트
+        }
+    });
+    </script>
+    <!-- <script>
+        function AOS_MOBILE() {
+        if (matchMedia("screen and (max-width: 767px)").matches) {
+
+            $('.finner>div').attr('data-aos', 'fade-left');
+
+        }else{
+            $('.finner>div').attr('data-aos', 'fade-right');
+        }
+        } // 767px 이하일 때 left_con 의 애니메이션 효과를 fade-left 으로 바꾼다.
+        AOS_MOBILE();
+    </script> -->
+    <script>
+        //해당 위치로 이동	
+                $(document).ready(function(){
+                    $('.select-content li a').each(function(idx){
+                        var i=idx;
+                        var target;
+                        if(i==0){
+                            target = $('#first').offset();
+                        }else if (i==1){
+                            target = $('#second').offset();
+                        }else if (i==2){
+                            target = $('#third-m').offset();
+                        }else if (i==3){
+                            target = $('#fourth').offset();
+                        }else if (i==4){
+                            target = $('#fifth').offset();
+                        }
+                        $(this).click(function(){
+                            $('.select-content li a span').css('display','none');
+                            $('.select-content li a img').css('display','block');
+                            
+
+                            $('.select-content li:nth-child('+(idx+1)+') a img').css('display','none');
+                            
+                            if(i==0){
+                                
+                                $('.select-content li:first-child a span').css('display','block');
+                                $('html, body').animate({scrollTop : target.top-300}, 1000);
+                            }else if(i==1){
+                                $('.select-content li:nth-child(2) a span').css('display','block');
+                                $('html, body').animate({scrollTop : target.top-50}, 1000);
+                            }else if(i==2){
+                                $('.select-content li:nth-child(3) a span').css('display','block');
+                                $('html, body').animate({scrollTop : target.top-50}, 1000);
+                            }else if(i==3){
+                                $('.select-content li:nth-child(4) a span').css('display','block');
+                                $('html, body').animate({scrollTop : target.top-50}, 1000);
+                            }else if(i==4){
+                                $('.select-content li:nth-child(5) a span').css('display','block');
+                                $('html, body').animate({scrollTop : target.top-50}, 1000);
+                            }
+                            //클릭한 원만 글자가 나오게하고 나머지는 다시 원으로
+                        });
+            });
+                    
+        });
+        </script>
+    
+</head>
+<body id="subpage">
+    
+    <script src="./js/aoss.js"></script>
+    
+    <div id="wrap">
+        <header>
+            <h1>
+                <a href="mainpage.html">
+                    <img src="./image/skzLogo-b.png" alt="스트레이키즈로고 블랙버전">
+                </a>
+            </h1>
+            <p class="header-title">
+                DISCOGRAPHY
+            </p>
+        </header>
+        <div class="select-content">
+            <ul>
+                <li >
+                    <a id="sc1" href="#" onclick="return false"><span>ALBUM_INTRO</span><img src="./image/albumex.png"></a>
+                </li>
+                <li >
+                    <a  id="sc2" href="#" onclick="return false"><span>TRACKLIST</span><img src="./image/tracklist.png"></a>
+                </li>
+                <li >
+                    <a id="sc3" href="#" onclick="return false"><span>VIDEOS</span><img src="./image/video.png"></a>
+                </li>
+                <li >
+                    <a id="sc4" href="#" onclick="return false"><span>PHOTOS</span><img src="./image/gallery.png"></a>
+                </li>
+                <li>
+                    <a id="sc5" href="#" onclick="return false"><span>RELEASE</span><img src="./image/discography.png"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="parallax">
+            <div id="first" >
+                <div class="finner">
+                    <div class="f-div" data-aos="fade-right">
+                        <img class="albumImg" src="./image/album_1.jpg">
+                        <p class="release">
+                            Release Date
+                            <br>2022-03-18
+                        </p>
+                    </div>
+                    <section class="albumEx"   data-aos="fade-right">
+                        <h2>THE 2nd MINI ALBUM</h2>
+                        <h3>
+                            <img src="./image/oddinary-title2.jpg">
+                        </h3>
+                        <p class="explanation">
+                            <span>ODDINARY</span>는 유일무이한 특색을 지닌 스트레이 키즈의 정수를 
+                            제대로 느낄 수 있다. 앨범명에는 각각 '이상한', '평범한'이라는 뜻을 품
+                            은 두 영단어 'Odd'와 'Ordinary'를 결합해 완성했고, '평범한 우리들
+                            도 모두 이상한 면을 가지고 있다. 즉 이상한 것이 곧 평범한 것이다'라는
+                            메시지를 던진다. 신선하고 독특한 매력으로 전 세계 리스너들에게 눈도
+                            장을 찍은 이들이 범상치 않은 새 앨범 'ODDINARY'로 K팝 메인스트림
+                            을 이끌 것으로 기대를 모은다.
+                            <br><br>
+                            타이틀곡 'MANIAC'은 스트레이 키즈의 고유 매력에 새로움을 끼얹은 곡
+                            으로 전 세계 K팝 팬심을 다시 한번 휩쓴다. 과감한 사운드 위 독특하고 중
+                            독성 강한 후렴구에는 그룹 특유의 에너지가 담겼고, 다채롭게 구성된 곡의
+                            흐름 속 절제미와 성숙한 무드가 더해져 신선함을 안긴다. "다 터진 인형 실
+                            밥처럼 결국 본색이 드러나지 편하지 않은 이 life" 등 정곡을 찌르는 가사로 
+                            ‘세상이 정한 프레임에 갇히지 말고 숨겨져 있던 진짜 자기 자신을 드러내라’
+                            라는 메시지를 건넨다.
+                            <br><br>
+                            신곡 뮤직비디오는 독특한 사운드를 시각적으로 표현해 보고 듣는 재미를 배가
+                            한다. 곡 무드가 반전되면 그에 맞춰 뮤비 장면도 전환시켜 차별화된 분위기를 
+                            연출했고 몰입도를 상승시켰다. 또 멤버들의 시선에서 각자 바라본 세상을 비현
+                            실적으로 표현하거나 재치 있게 나타냈고, 스트레이 키즈는 각각의 서사를 품은 
+                            캐릭터를 연기해 보는 이들에게 드라마틱한 느낌을 준다.
+                            <br><br>
+                            그룹 내 프로듀싱 팀 쓰리라차(3RACHA)의 방찬, 창빈, 한을 주축으로 꾸준히 앨
+                            범 작업에 참여한 스트레이 키즈는 스스로 만든 음악으로 비약적인 성장을 이뤘다.
+                            이들은 지난해 스포티파이, 인스타그램, 유튜브 등 각종 글로벌 플랫폼에서 유의미
+                            한 성과를 거둔 것은 물론 한 해를 결산하는 시상식에서 데뷔 3년 만의 첫 대상을 포
+                            함해 4관왕에 등극하는 등 맹활약을 펼쳤다.
+                        </p>
+                    </section>
+                </div>
+            </div>
+            
+            <div id="second">
+                <section class="sinner all-inner">
+                    <h3 class="inner-tt">TRACKLIST</h3>
+                    <div>
+                        <ul class="TRACKLIST-list">
+                            <li data-aos="fade-left">
+                                <div class="con">1</div>
+                                <div class="track-title">
+                                    <p class="trT-1">
+                                        거미줄
+                                    </p>
+                                    <p class="trT-2">
+                                        Lyrics by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA), Composed by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA),
+                                        DallasK, Arranged by DallasK, 방찬 (3RACHA)
+                                    </p>
+                                </div>
+                                <div class="track-time">3:15</div>
+                            </li>
+                            <li data-aos="fade-left">
+                                <div class="con">2</div>
+                                <div class="track-title">
+                                    <p class="trT-1">
+                                        MANIAC *TITLE
+                                    </p>
+                                    <p class="trT-2">
+                                        Lyrics by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA), Composed by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA)
+                                        , 베르사최 (VERSACHOI),  Arranged by 베르사최 (VERSACHOI), 방찬 (3RACHA)
+                                    </p>
+                                </div>
+                                <div class="track-time">3:03</div>
+                            </li>
+                            <li data-aos="fade-left">
+                                <div class="con">3</div>
+                                <div class="track-title">
+                                    <p class="trT-1">
+                                        Charmer
+                                    </p>
+                                    <p class="trT-2">
+                                        Lyrics by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA), Composed by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA), 
+                                        베르사최 (VERSACHOI), Arranged by 베르사최 (VERSACHOI)
+                                    </p>
+                                </div>
+                                <div class="track-time">3:09</div>
+                            </li>
+                            <li data-aos="fade-left">
+                                <div class="con">4</div>
+                                <div class="track-title">
+                                    <p class="trT-1">
+                                        땡FREEZE
+                                    </p>
+                                    <p class="trT-2">
+                                        Lyrics by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA), Composed by 방찬 (3RACHA), 창빈 (3RACHA), 한 (3RACHA),
+                                        트리피 (Trippy), Arranged by 트리피 (Trippy), 방찬 (3RACHA)
+                                    </p>
+                                </div>
+                                <div class="track-time">2:59</div>
+                            </li>
+                            <li data-aos="fade-left">
+                                <div class="con">5</div>
+                                <div class="track-title">
+                                    <p class="trT-1">
+                                        Lonely St.
+                                    </p>
+                                    <p class="trT-2">
+                                        Lyrics by 방찬 (3RACHA), 창빈 (3RACHA), Composed by 방찬 (3RACHA), 창빈 (3RACHA), JUN2,  Arranged by JUN2, 
+                                        방찬 (3RACHA)
+                                    </p>
+                                </div>
+                                <div class="track-time">2:45</div>
+                            </li>
+                            <li data-aos="fade-left">
+                                <div class="con">6</div>
+                                <div class="track-title">
+                                    <p class="trT-1">
+                                        피어난다
+                                    </p>
+                                    <p class="trT-2">
+                                        Lyrics by 방찬 (3RACHA), 리노, 승민, 아이엔, Composed by 방찬 (3RACHA), 리노, 승민, 아이엔, Nickko Young,  Arranged
+                                        by Nickko Young, 방찬 (3RACHA)
+                                    </p>
+                                </div>
+                                <div class="track-time">3:40</div>
+                            </li>
+                            <li data-aos="fade-left">
+                                <div class="con">7</div>
+                                <div class="track-title">
+                                    <p class="trT-1">
+                                        Muddy Water
+                                    </p>
+                                    <p class="trT-2">
+                                        Lyrics by 창빈 (3RACHA), 한 (3RACHA), 현진, 필릭스, Composed by 창빈 (3RACHA), 한 (3RACHA), 현진, 필릭스,Millionboy
+                                        (밀리언보이),  Arranged by Millionboy(밀리언보이), 방찬 (3RACHA)
+                                    </p>
+                                </div>
+                                <div class="track-time">3:18</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="playNow" data-aos="fade-right">
+                        <h4>
+                            Play Now
+                            <img src="./image/music-note.svg">
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#">Melon</a>
+                            </li>
+                            <li>
+                                <a href="#">Bugs</a>
+                            </li>
+                            <li>
+                                <a href="#">Genie</a>
+                            </li>
+                            <li>
+                                <a href="#">FLO</a>
+                            </li>
+                            <li>
+                                <a href="#">VIBE</a>
+                            </li>
+                            <li>
+                                <a href="#">Spotify</a>
+                            </li>
+                            <li>
+                                <a href="#">Apple Music</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </section>
+                
+            </div>
+            <div id="third">
+                <section class="thinner all-inner">
+                    <h3 class="inner-tt">VIDEO & PHOTOS</h3>
+
+                    <div id="video-wrap"  class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                        <div>
+                            <div class="video-container">
+                                <div class="jetpack-video-wrapper">
+                                    <span class="embed-youtube" style="text-align:center; display: block;">
+                                        <iframe class="youtube-player" src="https://www.youtube.com/embed/OvioeS1ZZ7o?" data-ratio="0.5625" data-width="560" data-height="315">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="mvs-list ml1">
+                                <li>
+                                    <a href="#">
+                                        COMEBACK<br>
+                                        TRAILER
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        MV<br>
+                                        TEASER 1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        MV UNIT<br>
+                                        TEASER 1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        MV UNIT<br>
+                                        TEASER 2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        INTRO<br>
+                                        ODDINARY
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" style="color:#2c6757;">
+                                        'MANIAC' MV
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div  class="photos col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./image/photos-bh-1.jpg" height="600px"></div>
+                                <div class="swiper-slide"><img src="./image/photos-bh-2.jpg" height="600px"></div>
+                                <div class="swiper-slide"><img src="./image/gallery11-a.jpg" height="600px"></div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div class="photos-name">
+                            <ul>
+                                <li>
+                                    <a href="#"  style="color:#2c6757;">BANG CHAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">LEE KNOW</a>
+                                </li>
+                                <li>
+                                    <a href="#">CHANGBIN</a>
+                                </li>
+                                <li>
+                                    <a href="#">HYUNJIN</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">HAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">FELIX</a>
+                                </li>
+                                <li>
+                                    <a href="#">SEUNGMIN</a>
+                                </li>
+                                <li>
+                                    <a href="#">I.N</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>    
+                </section>
+
+            </div>
+            <div id="third-m">
+                <section class="thinner all-inner">
+                    <h3 class="inner-tt">VIDEOS</h3>
+
+                    <div id="video-wrap"  class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                        <ul>
+                            <li>
+                                <div>
+                                    <div class="video-container">
+                                        <div class="jetpack-video-wrapper">
+                                            <span class="embed-youtube" style="text-align:center; display: block;">
+                                                <iframe class="youtube-player" src="https://www.youtube.com/embed/qaaywl-6H4o?" data-ratio="0.5625" data-width="560" data-height="315">
+                                                </iframe>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mvs-list ml1">
+                                        COMEBACK
+                                        TRAILER
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="video-container">
+                                        <div class="jetpack-video-wrapper">
+                                            <span class="embed-youtube" style="text-align:center; display: block;">
+                                                <iframe class="youtube-player" src="https://www.youtube.com/embed/N7g34GdeZTk?" data-ratio="0.5625" data-width="560" data-height="315">
+                                                </iframe>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mvs-list ml1">
+                                        MV
+                                        TEASER 1
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="video-container">
+                                        <div class="jetpack-video-wrapper">
+                                            <span class="embed-youtube" style="text-align:center; display: block;">
+                                                <iframe class="youtube-player" src="https://www.youtube.com/embed/l0Sit0FORk4?" data-ratio="0.5625" data-width="560" data-height="315">
+                                                </iframe>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mvs-list ml1">
+                                        MV UNIT
+                                        TEASER 1
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="video-container">
+                                        <div class="jetpack-video-wrapper">
+                                            <span class="embed-youtube" style="text-align:center; display: block;">
+                                                <iframe class="youtube-player" src="https://www.youtube.com/embed/uCXepr6wr3I?" data-ratio="0.5625" data-width="560" data-height="315">
+                                                </iframe>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mvs-list ml1">
+                                        MV UNIT
+                                        TEASER 2
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="video-container">
+                                        <div class="jetpack-video-wrapper">
+                                            <span class="embed-youtube" style="text-align:center; display: block;">
+                                                <iframe class="youtube-player" src="https://www.youtube.com/embed/NxryzznrhEw?" data-ratio="0.5625" data-width="560" data-height="315">
+                                                </iframe>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mvs-list ml1">
+                                        INTRO
+                                        ODDINARY
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="video-container">
+                                        <div class="jetpack-video-wrapper">
+                                            <span class="embed-youtube" style="text-align:center; display: block;">
+                                                <iframe class="youtube-player" src="https://www.youtube.com/embed/OvioeS1ZZ7o?" data-ratio="0.5625" data-width="560" data-height="315">
+                                                </iframe>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mvs-list ml1">
+                                        'MANIAC' MV
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                                
+                                
+                    </div>
+
+                        
+                </section>
+
+            </div>
+            <div id="fourth">
+                <section class="fourinner all-inner">
+                    <h3 class="inner-tt">PHOTOS</h3>
+                    <div  class="photos col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                        <ul>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/photos-bh-1.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-bh-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery11-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    BANG CHAN
+                                </div>
+                            </li>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/photos-lk-1.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-lk-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery10-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    LEE KNOW
+                                </div>
+                            </li>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/gallery20-a.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-cb-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery9-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    CHANGBIN
+                                </div>
+                            </li>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/gallery19-a.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-hj-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery8-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    HYUNJIN
+                                </div>
+                            </li>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/gallery18-a.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-han-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery7-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    HAN
+                                </div>
+                            </li>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/gallery17-a.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-fx-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery6-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    FELIX
+                                </div>
+                            </li>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/gallery16-a.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-sm-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery5-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    SEUNGMIN
+                                </div>
+                            </li>
+                            <li>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./image/gallery15-a.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/photos-in-2.jpg" height="600px"></div>
+                                        <div class="swiper-slide"><img src="./image/gallery4-a.jpg" height="600px"></div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="photos-name">
+                                    I.N
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+            <div id="fifth">
+                <section class="fifinner all-inner">
+                    <h3 class="inner-tt">RELEASE</h3>
+                    <div class="release-albums">
+                        <p class="more"><a href="#">MORE ></a></p>
+                        <ul class="release-albums-list">
+                            <li>
+                                <a href="#">
+                                    <img src="./image/album_2.jpg">
+                                    <span class="hover-section">
+                                        <span>
+                                            <span>2021-11-19</span>
+                                            <span>Christmas EveL</span>
+                                        </span>
+                                        
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./image/album_3.jpg">
+                                    <span class="hover-section">
+                                        <span>
+                                            <span>2021-08-23</span>
+                                            <span>NOEASY</span>
+                                        </span>
+                                            
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./image/album_4.jpg">
+                                    <span class="hover-section">
+                                        <span>
+                                            <span>2021-06-26</span>
+                                            <span>Mixtape : 애</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./image/album_5.jpg">
+                                    <span class="hover-section">
+                                        <span>
+                                            <span>2020-11-26</span>
+                                            <span>ALL IN (Korean Ver.)</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+        <footer>
+            <ul class="sns">
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_instagram_b.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_twitter_b.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_facebook_b.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_youtube_b.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_fans_b.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_edm_b.png">
+                    </a>
+                </li>
+            </ul>
+            <ul class="sns-m">
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_instagram_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_twitter_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_facebook_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_youtube_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_fans_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_EDM_shadow.png">
+                    </a>
+                </li>
+            </ul>
+            <div class="cop">
+                Copyright ©
+                <span>JYP</span>
+                ENTERTAINMENT Co., Ltd. All rights reserved.
+            </div>
+           
+        </footer>
+    </div>
+    <!-- <script>
+        $(document).ready(function(){
+            if($(window).width()<767){
+                $('.f-div').attr({'data-aos': 'fade-left'});
+            }else{
+                $('.f-div').attr({'data-aos': 'fade-down'});
+            }
+        });
+        
+    </script> -->
+    <!-- Swiper JS -->
+    <script src="./js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 0,
+            loop: false,
+            autoplay: 2500,
+            autoplayDisableOnInteraction: false,
+            breakpoints: {
+                '767':{
+                    loop: false,
+                    autoplay:0
+                }
+            }
+        });
+    </script>
+    
+        
+</body>
+</html>

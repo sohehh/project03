@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/jquery.lightbox-0.5.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+
+    <script src="./js/jquery-1.9.1.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/parallax.js"></script>
+    <script src="./js/jquery.lightbox-0.5.js"></script>
+    <script>history.scrollRestoration = "manual"</script>
+    <script>
+        //메인 오른쪽 컨텐트 서서히 나타나게
+      $( document ).ready( function() {
+        $( '.select-content' ).fadeIn( 900 );
+      } );
+    </script>
+    <script>
+        //메인 오른쪽 컨텐트 서서히 나타나게
+      $( document ).ready( function() {
+        $( '.right-content' ).fadeIn( 900 );
+      } );
+    </script>
+    
+    <script>
+        //헤더네비게이션
+        $(function(){
+            $(".gnb_list li a").each(function(){
+                $(this).hover(function(){
+                    $(this).css('color','#2c6757');
+
+                },function(){
+                    $(this).css('color','black');
+
+                });
+            });
+        });
+    </script>
+    <script>
+        //sns
+        $(function(){
+            $(".sns li").each(function(){
+                $(this).hover(function(){
+                    $(this).stop().animate({ left: 10 }, "500");
+                },function(){
+                    $(this).stop().animate({ left: 0 }, "500");
+
+                });
+            });
+        });
+    </script>
+    <!-- <script>
+        /*
+        1. 스크롤이벤트가 발생하면, 
+
+        2. 각 .member-name>p 엘리먼트의 위치를 파악하고,
+
+        3. 엘리먼트의 모습이 50% 이상 보이면, 불투명도(opacity) 를 1로 서서히 바꿉니다. 
+        */ 
+        $(document).ready(function() {
+        /* 1 */
+        $(window).scroll( function(){
+            /* 2 */
+            $('.member-name>p').each( function(i){
+                var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                /* 3 */
+                if( bottom_of_window > bottom_of_object/2 ){
+                    $(this).stop().animate({'left':'25','opacity':'1'},500);
+                }
+            }); 
+        });
+    });
+
+    </script> -->
+    <script>
+        //메인 공지사항
+        document.addEventListener('DOMContentLoaded', ()=>{
+        var interval = window.setInterval(rollingCallback, 3000);
+        })
+        function rollingCallback(){
+            //.prev 클래스 삭제
+            document.querySelector('.rollingbanner .prev').classList.remove('prev');
+
+            //.current -> .prev
+            let current = document.querySelector('.rollingbanner .current');
+            current.classList.remove('current');
+            current.classList.add('prev');
+
+            //.next -> .current
+            let next = document.querySelector('.rollingbanner .next');
+            //다음 목록 요소가 널인지 체크
+            if(next.nextElementSibling == null){
+                document.querySelector('.rollingbanner ul li:first-child').classList.add('next');
+            }else{
+                //목록 처음 요소를 다음 요소로 선택
+                next.nextElementSibling.classList.add('next');
+            }
+            next.classList.remove('next');
+            next.classList.add('current');
+        }
+    </script>
+    <script>
+        //멤버이름
+        $(function(){
+            $(".member-name p").each(function(){
+                $(this).hover(function(){
+                    $(this).children().css('color','#2c6757');
+                    $(this).stop().animate({ 'letter-spacing': "0.2em"}, "500");
+                },function(){
+                    $(this).children().css('color','black');
+                    $(this).stop().animate({ 'letter-spacing': "0em" }, "500");
+
+                });
+            });
+        });
+    </script>
+    <!-- <script>
+        /*
+        1. 스크롤이벤트가 발생하면, 
+
+        2. 각 .member-name>p 엘리먼트의 위치를 파악하고,
+
+        3. 엘리먼트의 모습이 50% 이상 보이면, 불투명도(opacity) 를 1로 서서히 바꿉니다. 
+        */ 
+        $(document).ready(function() {
+        /* 1 */
+        $(window).scroll( function(){
+            /* 2 */
+            $('.pf_inner').each( function(i){
+                var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                /* 3 */
+                if( bottom_of_window > bottom_of_object/2 ){
+                    $(this).stop().animate({'right':'40','opacity':'1'},500);
+                }
+            }); 
+        });
+    });
+
+    </script> -->
+    <script>
+        $(function(){
+            var m=$('.pf-inner');
+            var menuName=[];
+
+            $('.member-name p').click(function(e){
+                e.preventDefault();
+                var idx =$(this).index();
+                console.log(idx);
+                console.log($('member-info>div:nth-child('+(idx+1)+')'));
+                $('.pf_inner').css({'display':'none','opacity':'0'});
+                $('.pf_inner:nth-child('+(idx+1)+')').css({'display':'block'});
+                // $('.pf_inner:nth-child('+(idx+1)+')').each(function(){
+                //     $(this).stop().animate({'top':'0','opacity':'1'},500);
+                //     $(this).stop().animate({'top':'100','opacity':'1'},500);
+                // });
+
+                $('.pf_inner:nth-child('+(idx+1)+')').stop().animate({'opacity':'1'},800);
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            $(".disco-albums-list li a").each(function(){
+                $(this).hover(function(){
+                    $(this).find('span.hover-section').fadeIn(500);
+                    
+                },function(){
+                    $(this).find('span.hover-section').fadeOut(400);
+
+                });
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            var $section = $('.parallax>div');
+            var $sectionInfo=[];
+            $(window).scroll(function(){
+                    $section.each(function(idx){
+                    var $this=$(this);
+                    $sectionInfo[idx]=$this.offset().top;
+                });
+                //console.log($sectionInfo);
+            });
+            
+        });
+    </script>
+    <script>
+    //해당 위치로 이동	
+    $(document).ready(function(){
+        $('.gnb_list li a').each(function(idx){
+            var i=idx;
+            var target=0;
+            // var target = $('.parallax>div:nth-child('+(i+1)+')').offset();
+            if(i==0){
+                    target = $('#main-container').offset();
+                }else if (i==1){
+                    target = $('#profile-wrap').offset();
+                }else if (i==2){
+                    target = $('#disco-wrap').offset();
+                }else if (i==3){
+                    target = $('#gallery-wrap').offset();
+                }else if (i==4){
+                    target = $('#video-wrap').offset();
+                }
+            
+            $(this).click(function(){
+                //var offset = $('.parallax>div:nth-child('+(i+1)+')').offset(); 
+                //선택한 태그의 위치를 반환                
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 
+                //지정해서 0.4초 동안 부드럽게 해당 위치로 이동함
+        
+                //$('body').removeClass('col-md-7');
+                if(i==0){
+                    $('html, body').animate({scrollTop : target.top-80}, 1000);
+                }else{
+                    $('html, body').animate({scrollTop : target.top-50}, 1000);
+                }
+            });
+        });
+        
+    });
+    </script>
+    <script>
+        //해당 위치로 이동	
+        $(document).ready(function(){
+            $('.select-content li a').each(function(idx){
+                var i=idx;
+                var target;
+                if(i==0){
+                    target = $('#main-container').offset();
+                }else if (i==1){
+                    target = $('#profile-wrap-m').offset();
+                }else if (i==2){
+                    target = $('#disco-wrap').offset();
+                }else if (i==3){
+                    target = $('#gallery-wrap-m').offset();
+                }else if (i==4){
+                    target = $('#video-wrap-m').offset();
+                }
+                $(this).click(function(){
+                    $('.select-content li a span').css('display','none');
+                    $('.select-content li a img').css('display','block');
+                    
+
+                    $('.select-content li:nth-child('+(idx+1)+') a img').css('display','none');
+                    
+                    if(i==0){
+                        
+                        $('.select-content li:first-child a span').css('display','block');
+                        $('html, body').animate({scrollTop : target.top-54}, 1000);
+                    }else if(i==1){
+                        $('.select-content li:nth-child(2) a span').css('display','block');
+                        $('html, body').animate({scrollTop : target.top-50}, 1000);
+                    }else if(i==2){
+                        $('.select-content li:nth-child(3) a span').css('display','block');
+                        $('html, body').animate({scrollTop : target.top-50}, 1000);
+                    }else if(i==3){
+                        $('.select-content li:nth-child(4) a span').css('display','block');
+                        $('html, body').animate({scrollTop : target.top-50}, 1000);
+                    }else if(i==4){
+                        $('.select-content li:nth-child(5) a span').css('display','block');
+                        $('html, body').animate({scrollTop : target.top-50}, 1000);
+                    }
+                    //클릭한 원만 글자가 나오게하고 나머지는 다시 원으로
+                });
+    });
+            
+});
+        </script>
+    <!-- <script>
+        $(function(){
+            //Javascript
+            //최초 로드 시 iframe 높이값 비율에 맞게 세팅
+            var $videoIframe = document.getElementById('video');
+            var responsiveHeight = $videoIframe.offsetWidth * 0.5625;
+            $videoIframe.setAttribute('height', responsiveHeight);
+
+            //브라우저 리사이즈 시 iframe 높이값 비율에 맞게 세팅
+            window.addEventListener('resize', function(){
+                responsiveHeight = $videoIframe.offsetWidth * 0.5625;
+                $videoIframe.setAttribute('height', responsiveHeight);
+            });
+        });
+    </script> -->
+    <script>
+        $(function(){
+            $('.ml1 a').each(function(idx){
+                $(this).click(function(e){
+                    $('.v-row').css('opacity','0');
+                    $('.skc').text("Stray Kids' Comment");
+                    e.preventDefault();
+                        $('.mvs-list a').css('color','black');
+                        $(this).css('color','#2c6757');
+                        if(idx+1==1){
+                            $('iframe').attr('src','https://www.youtube.com/embed/OvioeS1ZZ7o?autoplay=1&mute=1');
+                            $('p.comment').text('세상이 정한 평범하고 단순한 삶의 방식에 맞추지 않고, 저희만의 ”MANIAC” 적인 모습을 세상에 보여주는 곡입니다. 이전에 보여드렸던 매력에서 더 나아가 응축된 에너지로 완성된 한층 성숙한 분위기와 절제미를 느끼실 수 있고, 새로운 스트레이 키즈를 만나볼 수 있는 곡입니다.');
+                            
+                        }else if(idx+1==2){
+                            $('iframe').attr('src','https://www.youtube.com/embed/pM-jOfy_1jM?autoplay=1&mute=1');
+                            $('p.comment').text('마치 거미줄에 걸린 것처럼 상대방이 가진 치명적인 매력에서 빠져나올 수 없다는 내용을 담은 곡입니다. 듣기만 해도 소름 돋는 악기 사운드의 조화와 인상적인 가사를 귀 기울여 들어보시면 그게 단 한 번일지라도 이 곡에 중독되실 거예요.')
+                            
+                        }else if(idx+1==3){
+                            $('iframe').attr('src','https://www.youtube.com/embed/etjQd0wgUTo?autoplay=1&mute=1');
+                            $('p.comment').text('스트레이 키즈의 유쾌한 모습을 제대로 느낄 수 있는 곡입니다. 문제를 헤쳐내보겠다는 의지를 "내 앞을 가로막는 거대한 빙산 녹일 시간 없어 부숴" 등 얼음을 부숴버리겠다는 가사로 표현해 보았어요. 곡 엔딩이 굉장히 인상적입니다. “FREEZE. 땡!”');
+                        }else if(idx+1==4){
+                            $('iframe').attr('src','https://www.youtube.com/embed/jxwFUMvd-fY?autoplay=1&mute=1');
+                            $('p.comment').text("스트레이 키즈가 가는 길이 외롭고 힘든 길이라도 끝까지 갈 준비가 되어있다는 그룹의 방향성을 확실히 보여주는 곡입니다. '우리가 나아갈 길을 뒤돌아보지 않고 전진하겠다'는 포부를 거친 보컬로 표현했고, 그만큼 멤버들의 목소리에 굳은 의지가 녹아져있습니다.");
+                        }else if(idx+1==5){
+                            $('iframe').attr('src','https://www.youtube.com/embed/hU-Yk2esSC4?autoplay=1&mute=1');
+                            $('p.comment').text("");
+                            $('.skc').text("");
+
+                        }
+                        $('.v-row').animate({'opacity':'1'},500);
+                });
+            });
+            
+            
+            
+        });
+    </script>
+    <!-- <script>
+        $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $('.cop').css('display','block');
+        }
+    });
+    </script> -->
+    <script>
+        $(window).scroll(function(){
+        var scrT = $(window).scrollTop();
+        //console.log(scrT); //스크롤 값 확인용
+        if(scrT == $(document).height() - $(window).height()){
+            $('.cop').css('display','block');
+        } else {
+            //아닐때 이벤트
+        }
+    });
+    </script>
+    
+</head>
+<body id="mainpage">
+    <script src="./js/aoss.js"></script>
+    <div id="wrap">
+        <header>
+            <h1>
+                <a href="#">
+                    <img src="./image/skzLogo-b.png" alt="스트레이키즈로고 블랙버전">
+                </a>
+            </h1>
+            
+            <nav>
+                <ul class="gnb_list">
+                    <li>
+                        <a href="#">HOME</a>
+                        
+                    </li>
+                    <li>
+                        <a href="#">PROFILE</a>
+                        <ul class="sub_list">
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">DISCOGRAPHY</a>
+                    </li>
+                    <li>
+                        <a href="#">GALLERY</a>
+                    </li>
+                    <li>
+                        <a href="#">VIDEO</a>
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+        <div class="select-content">
+            <ul>
+                <li >
+                    <a id="sc1" href="#" onclick="return false"><span>HOME</span><img src="./image/house-door-fill.png"></a>
+                </li>
+                <li >
+                    <a id="sc2" href="#" onclick="return false"><span>PROFILE</span><img src="./image/profile.png"></a>
+                </li>
+                <li >
+                    <a  id="sc3" href="#" onclick="return false"><span>DISCOGRAPHY</span><img src="./image/discography.png"></a>
+                </li>
+                <li >
+                    <a id="sc4" href="#" onclick="return false"><span>GALLERY</span><img src="./image/gallery.png"></a>
+                </li>
+                <li>
+                    <a id="sc5" href="#" onclick="return false"><span>VIDEO</span><img src="./image/video.png"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="parallax">
+            <div id="main-container">
+                <div class="mainBg-img">
+
+                </div>
+                <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+                    <source src="./video/Stray Kids  MANIAC  M V_3.mp4" type="video/mp4">
+                        Sorry, your browser does not support HTML5 video.
+                </video>
+                <div class="right-content">
+                    <div class="mainAlbum">
+                        <p class="Album-name">
+                            <a href="#">ODDINARY</a>
+                        </p>
+                        <p class="Album-artist">
+                            <a href="#">Stray kids</a>
+                        </p>
+
+                        <p class="Album-row"></p>
+                    </div>
+                    <div class="main-notice">
+                        <p class="notice-title">
+                            <a href="#">NOTICE</a>
+                        </p>
+                        <div class="rollingbanner reverse">
+                            <div class="roll-wrap">
+                                <ul>
+                                    <li class="current">
+                                        <a href="#">
+                                            Stray Kids(스트레이 키즈) JAPAN 2nd Mini 
+                                            Album &lt;CIRCUS&gt; 발매 안내
+                                        </a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="#">
+                                            STRAY KIDS x SKZOO POP-UP STORE 'THE VICTORY' IN SEOUL OFFICIAL MERCH LIST
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            STRAY KIDS x SKZOO POP-UP STORE 'THE VICTORY' IN SEOUL EVENT INFORMATION
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            STRAY KIDS x SKZOO POP-UP STORE 'THE VICTORY' IN SEOUL
+                                        </a>
+                                    </li>
+                                    <li class="prev">
+                                        <a href="#">
+                                            STRAY KIDS x SKZOO POP-UP STORE 'THE VICTORY' IN SEOUL
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="profile-wrap">
+                <div class="profile-container">
+                    <div class="member-name col-md-7" data-aos="fade-right">
+                        <p><a href="#">BANG CHAN</a></p>
+                        <p><a href="#">LEE KNOW</a></p>
+                        <p><a href="#">CHANGBIN</a></p>
+                        <p><a href="#">HYUNJIN</a></p>
+                        <p><a href="#">HAN</a></p>
+                        <p><a href="#">FELIX</a></p>
+                        <p><a href="#">SEUNGMIN</a></p>
+                        <p><a href="#">I.N</a></p>
+                    </div>
+                    <div class="member-info col-md-7" data-aos="fade-left">
+                        
+                        <div class="pf_inner" id="40">
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="BANG CHAN" class="memI" src="./image/bangchan.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">BANG CHAN</div>
+                                <div>
+                                    이름 : 방찬<br>생일 : 1997.10.03
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf_inner" id="41" style="display :none;" >
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="LEE KNOW" class="memI" src="./image/leeknow.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">LEE KNOW</div>
+                                <div>
+                                    이름 : 리노<br>생일 : 1998.10.25
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf_inner" id="42" style="display :none;"  >
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="CHANGBIN" class="memI" src="./image/changbin.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">CHANGBIN</div>
+                                <div>
+                                    이름 : 창빈<br>생일 : 1999.08.11
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf_inner" id="43" style="display :none;"  >
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="HYUNJIN" class="memI" src="./image/hyunjin.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">HYUNJIN</div>
+                                <div>
+                                    이름 : 현진<br>생일 : 2000.03.20
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf_inner" id="44" style="display :none;"  >
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="HAN" class="memI" src="./image/han.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">HAN</div>
+                                <div>
+                                    이름 : 한<br>생일 : 2000.09.14
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf_inner" id="45"  style="display :none;" >
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="FELIX" class="memI" src="./image/felix.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">FELIX</div>
+                                <div>
+                                    이름 : 필릭스<br>생일 : 2000.09.15
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf_inner" id="46"  style="display :none;" >
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="SEUNGMIN" class="memI" src="./image/seungmin.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">SEUNGMIN</div>
+                                <div>
+                                    이름 : 승민<br>생일 : 2000.09.22
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf_inner" id="47"  style="display :none;" >
+                            <div class="profile_img">
+                                <div class="artist_img"><img alt="I.N" class="memI" src="./image/in.png"></div>
+                            </div>
+                            <div class="profile_txt">
+                                <div class="name_tt">I.N</div>
+                                <div>
+                                    이름 : 아이엔<br>생일 : 2001.02.08
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="profile-wrap-m">
+                <div class="profile-title tT">
+                    <p>PROFILE</p>
+                </div>
+                <div class="profile-wrap-list" data-aos="fade-top">
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m">
+                            <img alt="BANG CHAN" src="./image/bangchan-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">BANG CHAN</div>
+                            <div>
+                                이름 : 방찬<br>생일 : 1997.10.03
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m">
+                            <img alt="LEE KNOW" src="./image/leeknow-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">LEE KNOW</div>
+                            <div>
+                                이름 : 리노<br>생일 : 1998.10.25
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m">
+                            <img alt="CHANGBIN" src="./image/changbin-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">CHANGBIN</div>
+                            <div>
+                                이름 : 창빈<br>생일 : 1999.08.11
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m" >
+                            <img alt="HYUNJIN" src="./image/hyunjin-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">HYUNJIN</div>
+                            <div>
+                                이름 : 현진<br>생일 : 2000.03.20
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m">
+                            <img alt="HAN" src="./image/han-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">HAN</div>
+                            <div>
+                                이름 : 한<br>생일 : 2000.09.14
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m">
+                            <img alt="FELIX" src="./image/felix-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">FELIX</div>
+                            <div>
+                                이름 : 필릭스<br>생일 : 2000.09.15
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m">
+                            <img alt="SEUNGMIN" src="./image/seungmin-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">SEUNGMIN</div>
+                            <div>
+                                이름 : 승민<br>생일 : 2000.09.22
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="profile-img-m">
+                            <img alt="I.N" src="./image/in-m.jpg">
+                        </div>
+                        <div class="profile-txt-m">
+                            <div class="name-tt">I.N</div>
+                            <div>
+                                이름 : 아이엔<br>생일 : 2001.02.08
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="disco-wrap">
+                <div class="disco-title tT">
+                    <p>DISCOGRAPHY</p>
+                </div>
+                <div class="disco-albums col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                    <ul class="disco-albums-list">
+                        <li>
+                            <a href="subpage.html">
+                                <img src="./image/album_1.jpg">
+                                <span class="hover-section">
+                                    <span>ODDINARY</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">ODDINARY</span>
+                                <span class="album-dt">2022-03-18</span>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_2.jpg">
+                                <span class="hover-section">
+                                    <span>Christmas EveL</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">Christmas EveL</span>
+                                <span class="album-dt">2021-11-29</span>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_3.jpg">
+                                <span class="hover-section">
+                                    <span>NOEASY</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">NOEASY</span>
+                                <span class="album-dt">2021-08-13</span>
+                            </span>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_4.jpg">
+                                <span class="hover-section">
+                                    <span>Mixtape : 애</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">Mixtape : 애</span>
+                                <span class="album-dt">2021-06-26</span>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_5.jpg">
+                                <span class="hover-section">
+                                    <span>ALL IN (Korean Ver.)</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">ALL IN (Korean Ver.)</span>
+                                <span class="album-dt">2020-11-26</span>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_6.png">
+                                <span class="hover-section">
+                                    <span>ALL IN</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">ALL IN</span>
+                                <span class="album-dt">2020-10-27</span>
+                            </span>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_7.jpg">
+                                <span class="hover-section">
+                                    <span>IN生</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">IN生</span>
+                                <span class="album-dt">2020-09-14</span>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_8.jpg">
+                                <span class="hover-section">
+                                    <span>GO生</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">GO生</span>
+                                <span class="album-dt">2020-06-17</span>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/album_9.jpg">
+                                <span class="hover-section">
+                                    <span>TOP-Japanese ver.-</span>
+                                </span>
+                            </a>
+                            <span class="album-text">
+                                <span class="album-tt">TOP-Japanese ver.-</span>
+                                <span class="album-dt">2020-05-26</span>
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div id="gallery-wrap">
+                <div class="gallery-title tT">
+                    <p>GALLERY</p>
+                </div>
+                <div class="gallery-imgs" >
+                    <ul class="gallery-imgs-list gl1 col-md-7" data-aos="fade-left" data-aos-duration="2000">
+                        <li class="galImg-item">
+                            <a href="./image/gallery1-a.jpg">
+                                <img src="./image/gallery1-a.jpg">
+                            </a>
+                        </li>
+                        <li class="galImg-item">
+                            <a href="./image/gallery2-a.jpg">
+                                <img src="./image/gallery2-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery3-a.jpg">
+                                <img src="./image/gallery3-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery4-a.jpg">
+                                <img src="./image/gallery4-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery5-a.jpg">
+                                <img src="./image/gallery5-a.jpg">
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="gallery-imgs-list gl2 col-md-7" data-aos="fade-left" data-aos-duration="2000">
+                        <li>
+                            <a href="./image/gallery6-a.jpg">
+                                <img src="./image/gallery6-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery7-a.jpg">
+                                <img src="./image/gallery7-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery8-a.jpg">
+                                <img src="./image/gallery8-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery9-a.jpg">
+                                <img src="./image/gallery9-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery10-a.jpg">
+                                <img src="./image/gallery10-a.jpg">
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="gallery-imgs-list gl3 col-md-7" data-aos="fade-left" data-aos-duration="2000">
+                        <li>
+                            <a href="./image/gallery11-a.jpg">
+                                <img src="./image/gallery11-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery12-a.jpg">
+                                <img src="./image/gallery12-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery13-a.jpg">
+                                <img src="./image/gallery13-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery14-a.jpg">
+                                <img src="./image/gallery14-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery15-a.jpg">
+                                <img src="./image/gallery15-a.jpg">
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="gallery-imgs-list gl4 col-md-7" data-aos="fade-left" data-aos-duration="2000">
+                        <li>
+                            <a href="./image/gallery16-a.jpg">
+                                <img src="./image/gallery16-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery17-a.jpg">
+                                <img src="./image/gallery17-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery18-a.jpg">
+                                <img src="./image/gallery18-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery19-a.jpg">
+                                <img src="./image/gallery19-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./image/gallery20-a.jpg">
+                                <img src="./image/gallery20-a.jpg">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div id="gallery-wrap-m">
+                <div class="gallery-title tT">
+                    <p>GALLERY</p>
+                </div>
+                <div class="gallery-imgs" >
+                    <ul class="gallery-imgs-list gl1 col-md-7" data-aos="fade-up" data-aos-duration="2000">
+                        <li class="galImg-item">
+                            <a href="#">
+                                <img src="./image/gallery1-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery3-a.jpg">
+                            </a>
+                        </li>
+                        <li class="g2 g2f">
+                            <a href="#">
+                                <img src="./image/gallery4-a.jpg">
+                            </a>
+                        </li>
+                        <li class="g2">
+                            <a href="#">
+                                <img src="./image/gallery5-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery6-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery7-a.jpg">
+                            </a>
+                        </li>
+                        <li class="g2 g2f">
+                            <a href="#">
+                                <img src="./image/gallery8-a.jpg">
+                            </a>
+                        </li>
+                        <li class="g2">
+                            <a href="#">
+                                <img src="./image/gallery2-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery9-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery10-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery11-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery12-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery13-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery14-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery15-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery16-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery17-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery18-a.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./image/gallery19-a.jpg">
+                            </a>
+                        </li>
+                        <li class="glast">
+                            <a href="#">
+                                <img src="./image/gallery20-a.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                   
+                </div>
+            </div>
+            <div id="video-wrap">
+                <div class="video-title tT">
+                    <p>VIDEO</p>
+                </div>
+                <div class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="video-container">
+                        <div class="jetpack-video-wrapper">
+                            <span class="embed-youtube" style="text-align:center; display: block;">
+                                <iframe class="youtube-player" src="https://www.youtube.com/embed/OvioeS1ZZ7o?" data-ratio="0.5625" data-width="560" data-height="315">
+                                </iframe>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mvs col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                    <ul class="mvs-list ml1">
+                        <li>
+                            <a href="#" style="color:#2c6757;">
+                                MANIAC
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                VENOM
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                FREEZE
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Lonely St.
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                ＜ODDINARY＞ Mashup Video
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="v-row">
+                        
+                        <p class="comment">
+                            세상이 정한 평범하고 단순한 삶의 방식에 맞추지 않고, 저희만의 ”MANIAC” 적인 모습을 세상에 보여주는 곡입니다. 이전에 보여드렸던 매력에서 더 나아가 응축된 에너지로 완성된 한층 성숙한 분위기와 절제미를 느끼실 수 있고, 새로운 스트레이 키즈를 만나볼 수 있는 곡입니다.
+                        </p>
+                        <p class="skc">
+                            Stray Kids' Comment
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="video-wrap-m">
+                <div class="video-title tT">
+                    <p>VIDEO</p>
+                </div>
+                <ul>
+                    <li>
+                        <div class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <div class="video-container">
+                                <div class="jetpack-video-wrapper">
+                                    <span class="embed-youtube" style="text-align:center; display: block;">
+                                        <iframe class="youtube-player" src="https://www.youtube.com/embed/OvioeS1ZZ7o?" data-ratio="0.5625" data-width="560" data-height="315">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mvs col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <ul class="mvs-list ml1">
+                                <li class="list-tt">
+                                    <a href="#" style="color:#2c6757;">
+                                        MANIAC
+                                    </a>
+                                </li>
+                                <li class="list-txt">
+                                    <div class="v-row">
+                                
+                                        <p class="comment">
+                                            세상이 정한 평범하고 단순한 삶의 방식에 맞추지 않고, 저희만의 ”MANIAC” 적인 모습을 세상에 보여주는 곡입니다. 이전에 보여드렸던 매력에서 더 나아가 응축된 에너지로 완성된 한층 성숙한 분위기와 절제미를 느끼실 수 있고, 새로운 스트레이 키즈를 만나볼 수 있는 곡입니다.
+                                        </p>
+                                        <p class="skc">
+                                            Stray Kids' Comment
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <div class="video-container">
+                                <div class="jetpack-video-wrapper">
+                                    <span class="embed-youtube" style="text-align:center; display: block;">
+                                        <iframe class="youtube-player" src="https://www.youtube.com/embed/pM-jOfy_1jM?" data-ratio="0.5625" data-width="560" data-height="315">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mvs col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <ul class="mvs-list ml1">
+                                <li class="list-tt">
+                                    <a href="#" style="color:#2c6757;">
+                                        VENOM
+                                    </a>
+                                </li>
+                                <li class="list-txt">
+                                    <div class="v-row">
+                                
+                                        <p class="comment">
+                                            마치 거미줄에 걸린 것처럼 상대방이 가진 치명적인 매력에서 빠져나올 수 없다는 내용을 담은 곡입니다. 듣기만 해도 소름 돋는 악기 사운드의 조화와 인상적인 가사를 귀 기울여 들어보시면 그게 단 한 번일지라도 이 곡에 중독되실 거예요.
+                                        </p>
+                                        <p class="skc">
+                                            Stray Kids' Comment
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <div class="video-container">
+                                <div class="jetpack-video-wrapper">
+                                    <span class="embed-youtube" style="text-align:center; display: block;">
+                                        <iframe class="youtube-player" src="https://www.youtube.com/embed/etjQd0wgUTo?" data-ratio="0.5625" data-width="560" data-height="315">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mvs col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <ul class="mvs-list ml1">
+                                <li class="list-tt">
+                                    <a href="#" style="color:#2c6757;">
+                                        FREEZE
+                                    </a>
+                                </li>
+                                <li class="list-txt">
+                                    <div class="v-row">
+                                
+                                        <p class="comment">
+                                            스트레이 키즈의 유쾌한 모습을 제대로 느낄 수 있는 곡입니다. 문제를 헤쳐내보겠다는 의지를 "내 앞을 가로막는 거대한 빙산 녹일 시간 없어 부숴" 등 얼음을 부숴버리겠다는 가사로 표현해 보았어요. 곡 엔딩이 굉장히 인상적입니다. “FREEZE. 땡!”
+                                        </p>
+                                        <p class="skc">
+                                            Stray Kids' Comment
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <div class="video-container">
+                                <div class="jetpack-video-wrapper">
+                                    <span class="embed-youtube" style="text-align:center; display: block;">
+                                        <iframe class="youtube-player" src="https://www.youtube.com/embed/jxwFUMvd-fY?" data-ratio="0.5625" data-width="560" data-height="315">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mvs col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <ul class="mvs-list ml1">
+                                <li class="list-tt">
+                                    <a href="#" style="color:#2c6757;">
+                                        Lonely St.
+                                    </a>
+                                </li>
+                                <li class="list-txt">
+                                    <div class="v-row">
+                                
+                                        <p class="comment">
+                                            스트레이 키즈가 가는 길이 외롭고 힘든 길이라도 끝까지 갈 준비가 되어있다는 그룹의 방향성을 확실히 보여주는 곡입니다. '우리가 나아갈 길을 뒤돌아보지 않고 전진하겠다'는 포부를 거친 보컬로 표현했고, 그만큼 멤버들의 목소리에 굳은 의지가 녹아져있습니다.
+                                        </p>
+                                        <p class="skc">
+                                            Stray Kids' Comment
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="video-inner col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <div class="video-container">
+                                <div class="jetpack-video-wrapper">
+                                    <span class="embed-youtube" style="text-align:center; display: block;">
+                                        <iframe class="youtube-player" src="https://www.youtube.com/embed/hU-Yk2esSC4?" data-ratio="0.5625" data-width="560" data-height="315">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mvs col-md-7" data-aos="fade-up" data-aos-duration="3000">
+                            <ul class="mvs-list ml1">
+                                <li class="list-tt">
+                                    <a href="#" style="color:#2c6757;">
+                                        ＜ODDINARY＞<br> Mashup Video
+                                    </a>
+                                </li>
+                                <li class="list-txt">
+                                    <div class="v-row">
+                                
+                                        <p class="comment">
+                                            세상이 정한 평범하고 단순한 삶의 방식에 맞추지 않고, 저희만의 ”MANIAC” 적인 모습을 세상에 보여주는 곡입니다. 이전에 보여드렸던 매력에서 더 나아가 응축된 에너지로 완성된 한층 성숙한 분위기와 절제미를 느끼실 수 있고, 새로운 스트레이 키즈를 만나볼 수 있는 곡입니다.
+                                        </p>
+                                        <p class="skc">
+                                            Stray Kids' Comment
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <ul class="sns">
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_instagram.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_twitter.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_facebook.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_youtube.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_fans.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_EDM.png">
+                    </a>
+                </li>
+            </ul>
+            <ul class="sns-m">
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_instagram_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_twitter_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_facebook_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_youtube_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_fans_shadow.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/sns_EDM_shadow.png">
+                    </a>
+                </li>
+            </ul>
+            <div class="cop">
+                Copyright ©
+                <span>JYP</span>
+                ENTERTAINMENT Co., Ltd. All rights reserved.
+            </div>
+           
+        </footer>
+    </div>
+    <!--wrap end-->
+
+   
+
+    <script>
+        $(function(){
+            $('#gallery-wrap>.gallery-imgs>.gallery-imgs-list a').lightBox({
+                overlayBgColor:'black',
+                overlayOpacity:0.75
+            });//a를 클릭했을때 라이트박스 메서드실행
+        });
+    </script>
+      
+</body>
+<!-- <script>
+    const button1 = document.getElementById('sc1');
+    const section1 = document.getElementById('main-container');
+    const button2 = document.getElementById('sc2');
+    const section2 = document.getElementById('profile-wrap-m');
+    const button3 = document.getElementById('sc3');
+    const section3 = document.getElementById('disco-wrap');
+    const button4 = document.getElementById('sc4');
+    const section4 = document.getElementById('gallery-wrap-m');
+    const button5 = document.getElementById('sc5');
+    const section5 = document.getElementById('video-wrap-m');
+
+    button1.addEventListener('click', () => {
+    window.scrollBy({top: section1.getBoundingClientRect().top*2, behavior: 'smooth'});
+    });
+    button2.addEventListener('click', () => {
+        window.scrollBy({top: section2.getBoundingClientRect().top*2, behavior: 'smooth'});
+    });
+    button3.addEventListener('click', () => {
+        window.scrollBy({top: section3.getBoundingClientRect().top*2, behavior: 'smooth'});
+    });
+    button4.addEventListener('click', () => {
+        window.scrollBy({top: section4.getBoundingClientRect().top*2, behavior: 'smooth'});
+    });
+    button5.addEventListener('click', () => {
+        window.scrollBy({top: section5.getBoundingClientRect().top*2, behavior: 'smooth'});
+    });
+    
+    // $(window).scroll(function(){
+    // var scrT = $(window).scrollTop();
+    // console.log(scrT+"ddddddd"); //스크롤 값 확인용
+
+    // if(scrT>)
+    // });
+</script> -->
+</html>

@@ -1,0 +1,2171 @@
+/*폰트설정*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/*
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
+@font-face {
+    font-family: 'spoqa-bold';
+    src: url('../fonts/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Bold.ttf');
+}
+@font-face {
+    font-family: 'spoqa-medium';
+    src: url('../fonts/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Medium.ttf');
+}
+
+
+/*기본 셋팅*/
+*{margin:0; padding:0;}
+ul{list-style: none;}
+a{text-decoration: none; color:black;}
+img{vertical-align: top;}
+.skip{text-indent: -999999em; position: absolute;}
+html{overflow-x:hidden;position: relative;}
+
+/*폰트 설정*/
+body{font-family: 'Noto Sans KR', sans-serif;}
+/*hover event*/
+/* #mainpage .gnb_list li a:hover{
+    color:#00df2f;
+} */
+
+
+@media screen and (min-width:1200px) {
+#mainpage .select-content,
+.sns-m,
+#mainpage #video-wrap-m{
+    display: none !important;
+}
+html{
+    font-size: 16px;
+}
+/*패럴렉스*/
+#mainpage .parallax{
+	position:relative;
+	width:100%;
+	height:7762px;
+	margin:0 auto;
+}
+#mainpage #main-container{
+    position: absolute;
+    top:80px;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+#mainpage #profile-wrap{
+    position: absolute;
+    top:969px;
+    clear: both;
+    width: 100%;
+    height:1200px;
+    z-index:1000;
+    background-color: white;
+}
+#mainpage #disco-wrap{
+    position: absolute;
+    top:2169px;
+    clear: both;
+    width: 100%;
+    height:2500px;
+    z-index:2000;
+    background-color: white;
+}
+#mainpage #gallery-wrap{
+    position: absolute;
+    top:4669px;
+    clear: both;
+    width: 100%;
+    height:1500px;
+    z-index:2000;
+    background-color: white;
+}
+#mainpage #video-wrap{
+    position: absolute;
+    top:6169px;
+    clear: both;
+    width: 100%;
+    height:1500px;
+    z-index:3000;
+    background-color: white;
+}
+/* 롤링 배너 */
+#mainpage .rollingbanner{
+    z-index: 300;
+    width: 100%;
+    height:93px;
+}
+#mainpage .rollingbanner > .roll-wrap{
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    height: 93px;
+    
+}        
+#mainpage .rollingbanner ul li{
+    position: absolute;
+    top: -36px;
+    left: 0;
+    height:103px;
+    width: 100%;
+    display: block;
+}
+
+/* 이전, 현재, 다음 롤링 배너 표시 */
+#mainpage .rollingbanner li.prev{
+    top: 100px;
+    transition: top 0.5s ease;
+}
+#mainpage .rollingbanner li.current{
+    top: 0;
+    transition: top 0.5s ease;
+}
+#mainpage .rollingbanner li.next{
+    top: -100px;
+}
+#mainpage .rollingbanner a{
+    display: block;
+    display: -webkit-box;
+    text-decoration: none;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient:vertical;
+    overflow: hidden;
+    color:white;
+    cursor: pointer;
+}
+/* 반대 방향으로 진행 */
+#mainpage .rollingbanner.reverse li.prev{
+    top: -100px;
+    transition: top 0.5s ease;
+}
+#mainpage .rollingbanner.reverse li.next{
+    top: 100px;
+}
+#mainpage .roll-wrap ul {
+    overflow: hidden;
+    height: 93px;
+}
+#mainpage .roll-wrap ul li{
+    height: 93px;
+    width: 100%;
+}
+/*앨범에 hover했을때*/
+#mainpage .hover-section{
+    width: 100%;
+    height:355px;
+    background-color: #000000ba;    
+    position: absolute;
+    left:0;
+    top:0;
+    text-align: center;
+    display: none;
+}
+#mainpage .hover-section span{
+    color:white;
+    display: block;
+    font-size: 1.5625rem;
+    font-family: 'Montserrat';
+    line-height: 380px;
+}
+/*wrap*/
+#mainpage #wrap{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/*header*/
+ header{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+    z-index: 5000;
+    top:0;
+    box-shadow: 3px 2px 6px #00000026;
+
+}
+    /*로고*/
+header h1{
+    display: inline-block;
+    float:left;
+    margin-top: 15px;
+    margin-left: 5%;
+}
+header h1 a{
+    display: inline-block;
+}
+header h1 a img{
+    width:90px;
+}
+    /*네비게이션*/
+header nav{
+    float: right;
+    margin-top: 8px;
+    margin-right: 3%;
+}
+header .gnb_list{
+    overflow: hidden;
+    
+}
+header .gnb_list li{
+    float:left;
+}
+header .gnb_list li a{
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 1.25rem;
+    color:black;
+    padding: 20px 40px;
+    letter-spacing: 0.05em;
+} 
+
+/*main*/
+#mainpage #main-container{
+    position: relative;
+}
+#mainpage .mainBg-img{
+    background:url(../image/manicaMv-capture.jpg)no-repeat 50% 50%;
+    z-index: 1;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+    height:946px;
+	position:relative;
+    display: none;
+}
+#mainpage #videobcg{
+    width: 100%;
+     z-index: -1000;
+     overflow: hidden;
+     margin-top: -90px;
+}
+    /*메인 오른쪽 컨텐트*/
+#mainpage .right-content{
+    position: absolute;
+    top: 23%;
+    right: 8%;
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+}
+
+#mainpage .right-content .mainAlbum p,
+#mainpage .roll-wrap .current,
+#mainpage .right-content .main-notice p{
+    text-align: right;
+}
+#mainpage .right-content .mainAlbum{
+    overflow: hidden;
+}
+#mainpage .Album-name a{
+    font-family:'spoqa-bold';
+    font-size: 3.4375rem;
+    color: white;
+}
+#mainpage .Album-artist a{
+    margin-top: 15px;
+    display: block;
+    font-family: 'spoqa-medium';
+    font-size: 1.75rem;
+    color:white;
+}
+#mainpage .Album-row{
+    position: relative;
+    width: 170px;
+    float: right;
+    margin-top: 57px;
+    border-bottom: 2px solid #fff;
+}
+#mainpage .right-content .main-notice{
+    float:right;
+    width: 100%;
+}
+#mainpage .notice-title a{
+    margin-top: 57px;
+    display: block;
+    font-family: 'spoqa-bold';
+    color:white;
+    font-size: 1.25rem;
+}
+#mainpage .roll-wrap .current a{
+    margin-top: 10px;
+    display: block;
+    font-family: 'spoqa-bold';
+    font-size: 0.9375rem;
+    line-height: 23px;
+    color: white;
+}
+/*profile 스타일*/
+#mainpage #profile-wrap{
+    /* clear: both;
+    width: 100%;
+    height:900px; */
+}
+/* #mainpage .p-title p{
+    text-align: left;
+    font-family: 'Montserrat';
+    font-size: 35px;
+    color:black;
+    margin-top: 100px;
+} */
+#mainpage #profile-wrap-m{
+    display: none;
+}
+#mainpage .profile-container{
+    overflow: hidden;
+    width: 1200px;
+    padding:50px;
+    margin: 0 auto;
+}
+#mainpage .profile-container>div{
+    float:left;
+}
+#mainpage .profile-container .member-name{
+    margin-top: 120px;
+    width: 258px;
+}
+#mainpage .profile-container .member-name p{
+    text-align: right;
+    position: relative;
+    /* opacity: 0; */
+    
+}
+#mainpage .profile-container .member-name p a{
+    font-family: "Montserrat";
+    font-size: 2rem;
+    display: block;
+    padding:10px 0;
+}
+#mainpage .profile-container .member-info{
+    margin-left: 5%;
+    margin-top: 90px;
+}
+#mainpage .pf_inner{
+    width: 881px;
+    position: relative;
+}
+#mainpage .memI{
+    width: 100%;
+    width: 573px;
+    height: 720px;
+}
+#mainpage .pf_inner .profile_img{
+    float: left;
+}
+/*프로필 텍스트 폰트 스타일*/
+#mainpage .pf_inner .profile_txt{
+    
+    float:left;
+    margin-left: 75%;
+    margin-top: -150px;
+}
+#mainpage .name_tt{
+    text-align: left;
+    font-family: 'Montserrat';
+    font-size: 2.0625rem;
+    margin-bottom: 20px;
+}
+#mainpage .name_tt+div{
+    text-align: left;
+    font-family: 'spoqa-medium';
+    font-size: 1rem;
+}
+/*discography style*/
+#mainpage .disco-img{
+    background:url(../image/all-member_d.png)no-repeat 50% 30%;
+    z-index: 2001;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+    height:300px;
+	position:relative;
+    display: none;
+}
+.tT p{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 2.1875rem;
+    color:black;
+    margin-top: 80px;
+}
+#mainpage .disco-albums{
+    width: 1200px;
+    padding-top: 96px;
+    margin: 0 auto;   
+}
+#mainpage .disco-albums-list{
+    overflow: hidden;
+}
+#mainpage .disco-albums-list li{
+    float: left;
+    width: 355px;
+    margin:0 22.5px 0 22.5px;
+}
+#mainpage .disco-albums-list li:nth-child(3),
+#mainpage .disco-albums-list li:nth-child(6),
+#mainpage .disco-albums-list li:nth-child(9){
+    /* margin-right: 0; */
+}
+#mainpage .disco-albums-list li a{
+    display: block;
+    position: relative;
+}
+#mainpage .disco-albums-list li a img{
+    width: 100%;
+}
+#mainpage .album-text{
+    margin: 20px 0 45px 0;
+    display: block;
+    overflow: hidden;
+}
+#mainpage .album-text .album-tt{
+    float: left;
+    font-family: 'spoqa-bold';
+    font-size: 1.125rem;
+}
+#mainpage .album-text .album-dt{
+    float:right;
+    font-family: 'spoqa-medium';
+    font-size: 0.9375rem;
+}
+/*gallery style*/
+
+#mainpage .gallery-imgs{
+    width: 1200px;
+    padding-top: 96px;
+    margin: 0 auto;   
+}
+#mainpage .gallery-imgs-list{
+    margin: 20px 0;
+    overflow: hidden;
+    width: 100%;
+}
+#gallery-wrap-m{
+    display: none;
+}
+#mainpage .gl1 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 223.9px;
+}
+#mainpage .gl2 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 167.9px;
+}
+#mainpage .gl3 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 149.2px;
+}
+#mainpage .gl4 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 167.9px;
+}
+
+#mainpage .gallery-imgs-list li:last-child{
+    margin: 0;
+}
+#mainpage .gallery-imgs-list li a{
+    display: block;
+    height: 100%;
+}
+#mainpage .gallery-imgs-list li a img{
+    /* width: 100%; */
+    height: 100%;
+}
+/*video style*/
+#mainpage .video-title{
+    margin-bottom: 96px;
+}
+ .video-inner{
+    width: 1200px;
+    margin: 0 auto;  
+}
+#mainpage .video-container {
+    position: relative;
+    margin-top: 22px;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+#mainpage .video-container iframe,
+#mainpage .video-container object,
+#mainpage .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#mainpage .mvs{
+    width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+#mainpage .mvs-list{
+    /* display: inline-block; */
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;    
+}
+#mainpage .mvs-list li{
+    float: left;
+}
+#mainpage .mvs-list li a{
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 1.1875rem;
+    color: black;
+    padding: 10px 21px;
+}
+#mainpage .mvs .v-row{
+    width: 100%;
+    margin-bottom: 20px;
+    /* padding: 158px; */
+    box-sizing: border-box;
+    padding-top: 0;
+}
+#mainpage .mvs p.comment{
+    padding: 0 10px;
+    font-family: 'Noto Sans KR';
+    font-size: 1rem;
+    line-height: 30px;
+    color: black;
+    text-align: left;
+}
+#mainpage .mvs .skc{
+    font-family: 'spoqa-bold';
+    font-weight: bold;
+    font-size: 1rem;
+    color: #2c6757;
+    text-align: right;
+    padding: 10px;
+}
+
+/*footer 푸터는 고정시키기(스크롤시에도)*/
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 7000;
+}
+    /*sns 스타일*/
+footer .sns{
+    overflow: hidden;
+    position: fixed;
+    bottom: 46px;
+    left: 1.5%;
+}
+footer .sns li{
+    position: relative;
+}
+footer .sns li a{
+    padding: 15px;
+    display: block;
+}
+footer .sns li a img{
+    width: 25px;
+}
+footer .cop{
+    font-family: 'spoqa-bold';
+    text-align: right;
+    padding:50px 1.5% 20px 0;
+    display: none;
+}
+}
+@media screen and (max-width:767px) {
+    
+    #mainpage #wrap{
+        position: relative;
+    }
+
+html{
+    font-size: 12px;
+}
+/*셀렉트 스타일*/
+
+/*패럴렉스*/
+#mainpage .parallax{
+	position:relative;
+	width:100%;
+	height:21000px;
+	margin:0 auto;
+}
+#mainpage #main-container{
+    position: absolute;
+    top:57px;
+    width: 100%;
+    height:100%;
+    clear: both;
+    overflow: hidden;
+}
+#mainpage #profile-wrap{
+    display: none;
+    position: absolute;
+    top:600px;
+    clear: both;
+    width: 100%;
+    height:600px;
+    z-index:1000;
+    background-color: white;
+}
+#mainpage #profile-wrap-m{
+    position: absolute;
+    top:899px;
+    clear: both;
+    width: 100%;
+    height:2600px;
+    z-index:1000;
+    background-color: white;
+}
+#mainpage #disco-wrap{
+    position: absolute;
+    top:3499px;
+    clear: both;
+    width: 100%;
+    height:2200px;
+    z-index:2000;
+    background-color: white;
+}
+#mainpage #gallery-wrap{
+    display: none;
+    position: absolute;
+    top:10000px;
+    clear: both;
+    width: 100%;
+    height:1500px;
+    z-index:2000;
+    background-color: white;
+}
+#mainpage #gallery-wrap-m{
+    position: absolute;
+    top: 5699px;
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+    height: 10000px;
+    z-index: 2000;
+    background-color: white;
+}
+#mainpage #video-wrap{
+    display: none;
+    position: absolute;
+    top:15699px;
+    clear: both;
+    width: 100%;
+    height:500px;
+    z-index:3000;
+    background-color: white;
+}
+#mainpage #video-wrap-m{
+    position: absolute;
+    top:15699px;
+    clear: both;
+    width: 100%;
+    height: 3076px;
+    z-index:3000;
+    background-color: white;
+}
+/* 롤링 배너 */
+#mainpage .rollingbanner{
+    z-index: 300;
+    height:93px;
+}
+#mainpage .rollingbanner > .roll-wrap{
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    height: 93px;
+    
+}        
+#mainpage .rollingbanner ul li{
+    position: absolute;
+    top: -36px;
+    left: 0;
+    height:103px;
+    width: 100%;
+    display: block;
+}
+
+/* 이전, 현재, 다음 롤링 배너 표시 */
+#mainpage .rollingbanner li.prev{
+    top: 100px;
+    transition: top 0.5s ease;
+}
+#mainpage .rollingbanner li.current{
+    top: 0;
+    transition: top 0.5s ease;
+}
+#mainpage .rollingbanner li.next{
+    top: -100px;
+}
+#mainpage .rollingbanner a{
+    display: block;
+    display: -webkit-box;
+    text-decoration: none;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient:vertical;
+    overflow: hidden;
+    color:white;
+    cursor: pointer;
+}
+/* 반대 방향으로 진행 */
+#mainpage .rollingbanner.reverse li.prev{
+    top: -100px;
+    transition: top 0.5s ease;
+}
+#mainpage .rollingbanner.reverse li.next{
+    top: 100px;
+}
+#mainpage .roll-wrap ul {
+    overflow: hidden;
+    height: 93px;
+}
+#mainpage .roll-wrap ul li{
+    height: 93px;
+    width: 100%;
+}
+/*앨범에 hover했을때*/
+#mainpage .hover-section{
+    display: none !important;
+    width: 100%;
+    height:355px;
+    background-color: #000000ba;    
+    position: absolute;
+    left:0;
+    top:0;
+    text-align: center;
+}
+#mainpage .hover-section span{
+    color:white;
+    display: block;
+    font-size: 1.5625rem;
+    font-family: 'Montserrat';
+    line-height: 380px;
+}
+/*wrap*/
+#mainpage #wrap{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/*header*/
+header{
+    width: 100%;
+    height: 56px;
+    background-color: #fffffff0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 5000;
+    top:0;
+    box-shadow: 3px 2px 6px #00000026;
+
+}
+#mainpage .select-content{
+    position: fixed;
+    top: 42%;
+    right: 5%;
+    width:30%;
+    z-index: 20000;
+    overflow: hidden;
+}
+#mainpage .select-content ul li{
+    text-align: right;
+    font-family: 'spoqa-bold';
+    font-size: 1.3rem;
+    margin-bottom: -2px;
+    /* padding: 2px; */
+    line-height: 2.5rem;
+    text-shadow: 0px 1px 4px #7c7777;
+}
+#mainpage .select-content ul li a {
+    color: black;
+    display: inline-block;
+    width: 25px;
+    padding: 5px 0;
+}
+#mainpage .select-content ul li a img {
+    width: 100%;
+    box-shadow: 2px 2px solid #ccc;
+}
+#mainpage .select-content ul li:first-child a img {
+    vertical-align: top;
+}
+#mainpage .select-content ul li a span {
+    display: none;
+    margin-left: -171px;
+    color: white;
+}
+    /*로고*/
+header h1{
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+header h1 a{
+    display: inline-block;
+}
+header h1 a img{
+    width:100%;
+}
+    /*네비게이션*/
+header nav{
+    float: right;
+    margin-top: 8px;
+    margin-right: 3%;
+}
+header .gnb_list{
+    overflow: hidden;
+    
+}
+header .gnb_list li{
+    float:left;
+}
+header .gnb_list li a{
+    display: block;
+    font-family: 'Montserrat';
+    font-size:1.25rem;
+    color:black;
+    padding: 20px 40px;
+    letter-spacing: 0.05em;
+} 
+
+/*main*/
+#mainpage #main-container{
+    position: relative;
+}
+#mainpage .mainBg-img{
+    background:url(../image/gallery12-a.jpg)no-repeat 55% 50%;
+    z-index: -1000;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+    height:100%;
+	position:relative;
+}
+#mainpage #videobcg{
+    display: none;
+    width: 100%;
+     z-index: -1000;
+     overflow: hidden;
+     margin-top: -14px;
+}
+    /*메인 오른쪽 컨텐트*/
+#mainpage .right-content{
+    position: absolute;
+    top: 11%;
+    right: 4%;
+    width: 64%;
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+}
+
+#mainpage .right-content .mainAlbum p,
+#mainpage .roll-wrap .current,
+#mainpage .right-content .main-notice p{
+    text-align: right;
+}
+#mainpage .right-content .mainAlbum{
+    overflow: hidden;
+}
+
+#mainpage .Album-name a{
+    font-family:'spoqa-bold';
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+}
+#mainpage .Album-artist a{
+    margin-top: 7px;
+    display: block;
+    font-family: 'spoqa-medium';
+    font-size: 1.8rem;
+    color:rgb(255, 255, 255);
+}
+#mainpage .Album-row{
+    position: relative;
+    width: 130px;
+    float: right;
+    margin-top: 20px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+#mainpage .right-content .main-notice{
+    float:right;
+    width: 100%;
+}
+#mainpage .notice-title a{
+    margin-top: 20px;
+    display: block;
+    font-family: 'spoqa-bold';
+    color:rgb(255, 255, 255);
+    font-size: 1.8rem;
+}
+#mainpage .roll-wrap .current a{
+    margin-top: 5px;
+    display: block;
+    font-family: 'spoqa-bold';
+    font-size:1.2rem;
+    line-height: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+/*profile 스타일*/
+
+#mainpage .profile-container{
+    overflow: hidden;
+    width: 1200px;
+    margin: 0 auto;
+}
+#mainpage .profile-container>div{
+    float:left;
+}
+#mainpage .profile-container .member-name{
+    margin-top: 120px;
+    width: 130px;
+}
+#mainpage .profile-container .member-name p{
+    text-align: right;
+    position: relative;
+    /* opacity: 0; */
+    
+}
+#mainpage .profile-container .member-name p a{
+    font-family: "Montserrat";
+    font-size: 1.3rem;
+    display: block;
+    padding:5px 0;
+}
+#mainpage .profile-container .member-info{
+    margin-left: 20px;
+    margin-top: 151px;
+}
+#mainpage .pf_inner{
+    position: relative;
+}
+#mainpage .memI{
+    width: 100%;
+}
+#mainpage .pf_inner .profile_img{
+    float: left;
+    width: 40%;
+    margin-bottom: 20px;
+}
+/*프로필 텍스트 폰트 스타일*/
+#mainpage .pf_inner .profile_txt{
+    margin-top: 20px;
+    clear: both;
+}
+#mainpage .name_tt{
+    text-align: left;
+    font-family: 'Montserrat';
+    font-size: 2.0625rem;
+    margin-bottom: 20px;
+}
+#mainpage .name_tt+div{
+    text-align: left;
+    font-family: 'spoqa-medium';
+    font-size: 1rem;
+}
+/*프로필 모바일 스타일*/
+#mainpage #profile-wrap-m .profile-wrap-list {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 80px;
+    overflow: hidden;
+}
+#mainpage .profile-wrap-list>div{
+    width: 44%;
+    float: left;
+    margin: 0 auto;
+    margin: 0 3%;
+    /* margin-right: 20px; */
+    margin-bottom: 20px;
+}
+#mainpage .profile-img-m img{
+    width: 100%;
+    box-shadow: 5px 5px 5px #ccc;
+}
+#mainpage .profile-txt-m{
+    margin-top: 20px;
+}
+#mainpage .name-tt{
+    font-family: 'Montserrat';
+    font-size: 1.375rem;
+}
+#mainpage .name-tt + div{
+    font-family: 'spoqa-medium';
+    font-size: 1.125rem;
+    margin: 14px 0 50px 0;
+}
+/*discography style*/
+#mainpage .disco-img{
+    background:url(../image/all-member_d.png)no-repeat 50% 30%;
+    z-index: 2001;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+    height:300px;
+	position:relative;
+    display: none;
+}
+.tT p{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 2.5rem;
+    color: black;
+    margin-top: 50px;
+}
+#mainpage .disco-albums{
+    width: 100%;
+    padding-top: 80px;
+    margin: 0 auto;   
+}
+#mainpage .disco-albums-list{
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+}
+#mainpage .disco-albums-list li{
+    float: left;
+    width: 44%;
+    height: 249px;
+    margin:0 3% 0 3%;
+}
+#mainpage .disco-albums-list li a {
+    box-shadow: 3px 3px 5px 0px #87828294;
+}
+#mainpage .disco-albums-list li:nth-child(3),
+#mainpage .disco-albums-list li:nth-child(6),
+#mainpage .disco-albums-list li:nth-child(9){
+    /* margin-right: 0; */
+}
+#mainpage .disco-albums-list li a{
+    display: block;
+    position: relative;
+}
+#mainpage .disco-albums-list li a img{
+    width: 100%;
+}
+#mainpage .album-text{
+    margin: 11px 0 32px 0;
+    display: block;
+    overflow: hidden;
+}
+#mainpage .album-text .album-tt{
+    float: left;
+    font-family: 'spoqa-bold';
+    font-size: 1.125rem;
+}
+#mainpage .album-text .album-dt{
+    float:right;
+    font-family: 'spoqa-medium';
+    font-size: 0.9375rem;
+}
+/*gallery style*/
+
+#mainpage #gallery-wrap .gallery-imgs{
+    width: 1200px;
+    padding-top: 96px;
+    margin: 0 auto;   
+}
+#mainpage #gallery-wrap .gallery-imgs-list{
+    margin: 20px 0;
+    overflow: hidden;
+    width: 100%;
+}
+#mainpage #gallery-wrap .gl1 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 223.9px;
+}
+/*갤러리 모바일 스타일*/
+#mainpage #gallery-wrap-m .gallery-imgs{
+    width: 100%;
+    padding-top: 65px;
+    margin: 0 auto;
+}
+#mainpage #gallery-wrap-m .gallery-imgs-list{
+    margin: 20px 0;
+    overflow: hidden;
+    width: 90%;
+    margin: 20px auto;
+}
+#mainpage #gallery-wrap-m .gl1 li{
+    float: left;
+    margin-bottom: 20px;
+}
+#mainpage #gallery-wrap-m .gl2 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 167.9px;
+}
+#mainpage #gallery-wrap-m .gl3 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 149.2px;
+}
+#mainpage #gallery-wrap-m .gl4 li{
+    float: left;
+    margin-right: 20px;
+    /* width: 405px; */
+    height: 167.9px;
+}
+#mainpage #gallery-wrap-m li.g2 {
+    width: 47% !important;
+}
+#mainpage #gallery-wrap-m li.g2f {
+    margin-right: 6%;
+}
+#mainpage #gallery-wrap-m .gallery-imgs-list li:last-child{
+    margin: 0;
+}
+#mainpage #gallery-wrap-m .gallery-imgs-list li a{
+    display: block;
+}
+#mainpage #gallery-wrap-m .gallery-imgs-list li a img{
+    width: 100%;
+}
+#mainpage #gallery-wrap-m .glast{
+    width: 100%;
+}
+/*video style*/
+#mainpage .video-title{
+    margin-bottom: 80px;
+}
+.video-inner{
+    width: 100%;
+    margin: 0 auto;  
+}
+#mainpage .video-container {
+    position: relative;
+    margin-top: 22px;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+#mainpage .video-container iframe,
+#mainpage .video-container object,
+#mainpage .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#mainpage .mvs{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 19px;
+    margin-bottom: 50px;
+}
+#mainpage .mvs-list{
+    /* display: inline-block; */
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    /* border-bottom: 2px solid black;     */
+}
+/* #mainpage .mvs-list li{
+    float: left;
+} */
+#mainpage .mvs-list li a{
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 1.8rem;
+    color: black;
+    padding: 10px 21px;
+    margin-bottom: 5px;
+}
+#mainpage .mvs .v-row{
+    width: 100%;
+    margin-bottom: 20px;
+    /* padding: 158px; */
+    box-sizing: border-box;
+    padding-top: 0;
+}
+#mainpage .mvs p.comment{
+    
+    font-family: 'Noto Sans KR';
+    font-size: 1.25rem;
+    line-height: 30px;
+    color: #545454;
+    text-align: left;
+}
+#mainpage .mvs .skc{
+    font-family: 'spoqa-bold';
+    font-weight: bold;
+    font-size: 1rem;
+    color: #2c6757;
+    text-align: right;
+    padding: 10px;
+}
+#mainpage .mvs .mvs-list .list-tt{
+    border-bottom: 2px solid #666;
+}
+#mainpage .mvs .mvs-list .list-txt{
+    margin-top: 20px;
+}
+#mainpage #video-wrap-m>ul>li:last-child .mvs .mvs-list .list-tt{
+    border-bottom: none;
+}
+#mainpage #video-wrap-m>ul>li:last-child .mvs .mvs-list .list-txt{
+    display: none;
+}
+#mainpage #video-wrap-m>ul>li {
+    width: 90%;
+    margin: 0 auto;
+}
+/*footer 푸터는 고정시키기(스크롤시에도)*/
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 7000;
+}
+    /*sns 스타일*/
+footer .sns{
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    bottom: 59px;
+    left: 1.5%;
+}
+footer .sns li{
+    width: 63%;
+    position: relative;
+}
+footer .sns li a{
+    padding: 10px;
+    display: block;
+}
+footer .sns li a img{
+    width: 100%;
+}
+/*sns m버전*/
+footer .sns-m{
+    overflow: hidden;
+    position: fixed;
+    bottom: 59px;
+    left: 3.5%;
+}
+footer .sns-m li{
+    width: 63%;
+    position: relative;
+}
+footer .sns-m li a{
+    padding: 5px;
+    width: 30px;
+    display: block;
+}
+footer ul.sns-m li:nth-child(3) a {
+    width: 25px;
+}
+footer .sns-m li a img{
+    width: 100%;
+}
+footer .cop{
+    font-family: 'spoqa-bold';
+    text-align: right;
+    padding:50px 3% 20px 184px;
+    display: none;
+}
+}
+
+@media screen and (min-width:1200px) {
+    #subpage .select-content,
+    #third-m,
+    #fourth{
+        display: none;
+    }
+    #subpage header p.header-title{
+        font-family: 'Montserrat';
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 80px;
+    }
+
+    /*패럴렉스*/
+#subpage .parallax{
+	position:relative;
+	width:100%;
+	height:8000px;
+	margin:0 auto;
+}
+#subpage #first{
+    position: absolute;
+    top:80px;
+    width: 100%;
+    height: 1500px;
+    clear: both;
+    overflow: hidden;
+}
+#subpage #second{
+    position: absolute;
+    top:1580px;
+    clear: both;
+    width: 100%;
+    height:2000px;
+    z-index:1000;
+    background: #efefef;;
+}
+#subpage #third{
+    position: absolute;
+    top:4400px;
+    clear: both;
+    width: 100%;
+    height:695px;
+    z-index:1000;
+    background: #fff;;
+}
+/* #subpage #fourth{
+    position: absolute;
+    top:5700px;
+    clear: both;
+    width: 100%;
+    height:1000px;
+    z-index:1000;
+    background: #efefef;;
+} */
+#subpage #fifth{
+    position: absolute;
+    top:7300px;
+    clear: both;
+    width: 100%;
+    height:1600px;
+    z-index:1000;
+    background: #fff;;
+}
+    /*animate*/
+    .animate{
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+        transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    /*header*/
+    #subpage header{
+        background-color: #ffffff !important;
+    }
+    
+    #subpage header h1 {
+        position: absolute;
+        display: inline-block;
+        float: left;
+        margin-top: 15px;
+        margin-left: 5%;
+    }
+    /*finner*/
+    #subpage .finner{
+        width: 1200px;
+        overflow: hidden;
+        margin:0 auto;
+        margin-top: 100px;
+    }
+    #subpage #first .finner>img{
+        float: left;
+        width: 500px;
+        margin: 10px;
+        margin-left: 85px;
+        box-shadow: 0px 3px 11px 1px rgb(0 0 0 / 59%);
+    }
+    #subpage #first .finner>div{
+        float: left;
+    }
+    #subpage #first .finner>div>p{
+        margin-top: 20px;
+        font-family: 'Montserrat';
+        line-height: 1.5rem;
+    }
+    #subpage #first .albumEx{
+        float: left;
+        width: 490px;
+        margin-left: 100px;
+    }
+    
+    #subpage #first .albumEx h2{
+        font-family: 'spoqa-bold';
+        font-size: 1.3rem;
+    }
+    #subpage #first .albumEx h3{
+        margin-top: 16px;
+        margin-left: -15px;
+    }
+    #subpage #first .albumEx h3 img{
+        width: 363px;
+
+    }
+    #subpage #first .albumEx p{
+        margin-top: 60px;
+        font-family: "spoqa-medium";
+        font-size: 1rem;
+        line-height: 1.8rem;
+        color:black;
+    }
+    #subpage #first .albumEx p>span{
+        font-size: 1.5rem;
+        font-family: 'spoqa-bold';
+    }
+    #subpage #first .albumImg {
+        box-shadow: -1px 2px 6px #727272;
+    }
+    /*sinner*/
+    #subpage .all-inner{
+        width: 1200px;
+        overflow: hidden;
+        margin:0 auto;
+        margin-top:50px;
+    }
+    #subpage .inner-tt{
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: 2rem;
+        /* margin-left: 48px; */
+    }
+    #subpage .sinner h3 + div{
+        margin-top: 80px;
+    }
+    #subpage .TRACKLIST-list{
+        width: 70%;
+        margin: 0 auto;
+    }
+    #subpage .TRACKLIST-list li{
+        width: 100%;
+        overflow: hidden;
+        font-family: 'spoqa-bold';
+        padding: 50px 0;
+        background: #ffff;
+        border-radius: 10px;
+        margin-bottom: 42px;
+        box-shadow: 3px 3px 7px #ccc;
+    }
+    /* #subpage .TRACKLIST-list li:first-child{
+        padding-top: 0;
+    } */
+    #subpage .TRACKLIST-list li>div{
+        float: left;
+        font-size: 1.3rem;
+    }
+
+    #subpage .TRACKLIST-list .track-time{
+        width: 11%;
+        text-align: center;
+    }
+    #subpage .TRACKLIST-list .con{
+        width: 7%;
+        text-align: center;
+    }
+    #subpage .TRACKLIST-list .track-title{
+        width: 82%;
+    }
+    #subpage .TRACKLIST-list .track-title p{
+        padding-left: 1rem;
+    }
+    #subpage .TRACKLIST-list .track-title .trT-2{
+        margin-top: 10px;
+        color:#8b8b8b;
+        font-size: 0.85rem !important;
+    }
+    #subpage .playNow{
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    #subpage .playNow h4{
+        margin-top: 30px;
+        font-size: 1.2rem;
+    }
+    #subpage .playNow h4 img{
+        vertical-align: middle;
+    }
+
+    #subpage .playNow ul{
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    #subpage .playNow ul li{
+        float:left;
+    }
+    #subpage .playNow ul li a{
+        padding: 5px 15px 5px 0;
+    }
+
+    /*third style*/
+    .video-inner{
+        width: 1200px;
+        margin: 0 auto;  
+    }
+    #subpage .video-container {
+        position: relative;
+        margin-top: 22px;
+        padding-bottom: 56.25%;
+        padding-top: 30px; height: 0; overflow: hidden;
+    }
+    #subpage #video-wrap {
+        margin-top: 80px;
+    }
+    #subpage .video-container iframe,
+    #subpage .video-container object,
+    #subpage .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #subpage .mvs{
+        width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+    #subpage .mvs-list{
+        width: 82%;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;   
+    }
+    #subpage .mvs-list li{
+        float: left;
+        text-align: center;
+    }
+    #subpage .mvs-list li a{
+        display: block;
+        font-family: 'Montserrat';
+        font-size: 1.1875rem;
+        color: black;
+        padding: 10px 29px;
+    }
+    #subpage .mvs .v-row{
+        width: 100%;
+        margin-bottom: 20px;
+        /* padding: 158px; */
+        box-sizing: border-box;
+        padding-top: 0;
+    }
+    #subpage .mvs p.comment{
+        padding: 0 10px;
+        font-family: 'Noto Sans KR';
+        font-size: 1rem;
+        line-height: 30px;
+        color: black;
+        text-align: left;
+    }
+    #subpage .mvs .skc{
+        font-family: 'spoqa-bold';
+        font-weight: bold;
+        font-size: 1rem;
+        color: #2c6757;
+        text-align: right;
+        padding: 10px;
+    }
+    .photos{
+        margin-top: 120px;
+    }
+    .photos-name ul{
+        
+        width: 97%;
+        margin:auto;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    .photos-name ul li{
+        float: left;
+    }
+    .photos-name ul li a{
+        padding: 10px 30px;
+        font-size: 1.2rem;
+        font-family: 'Montserrat';
+    }
+
+    /*release style*/
+    .release-albums{
+        margin-top: 80px;
+    }
+    .release-albums-list{
+        overflow: hidden;
+    }
+    .release-albums-list li{
+        float: left;
+        margin-right: 30px;
+    }
+    .release-albums-list li:last-child{
+        margin-right: 0;
+    }
+    .release-albums-list li a{
+        display: block;
+        position: relative;
+    }
+    .release-albums-list li a img{
+        width: 277.5px;
+    }
+    #subpage .hover-section{
+        display: none;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 277.5px;
+        height: 277.5px;
+        background-color: #000;
+        color:#fff;
+    }
+    #subpage .hover-section>span{
+        color:white;
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 277.5px;
+        font-size: 1.3rem;
+        margin-top: 110px;
+        font-family: 'Montserrat';
+    }
+    #subpage .hover-section>span span:first-child{
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1rem !important;
+    }
+    .release-albums>p.more{
+        text-align: right;
+        font-size: 1.3rem;
+        margin-bottom: 17px;
+        font-family: 'Montserrat';
+    }
+    
+
+    /*갤러리 플러그인 css 스타일*/
+    .swiper-container {
+        width: 1200px;
+        margin-left: auto;
+        margin-top: 80px;
+        margin-right: auto;
+        border-radius: 18px;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #000;
+        width: 70%;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        background-image: url(../image/chevron-right.svg);
+        right: 24px !important;
+        left: auto;
+    }
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        background-image: url(../image/chevron-left.svg);
+        left: 24px !important;
+        right: auto;
+    }
+}
+
+@media screen and (max-width:767px) {
+    #subpage header p.header-title{
+        display: none;
+        font-family: 'Montserrat';
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 80px;
+    }
+
+    /*select content*/
+
+    #subpage .select-content{
+        position: fixed;
+        top: 32.6%;
+        right: 5%;
+        width:30%;
+        z-index: 20000;
+        overflow: hidden;
+    }
+    #subpage .select-content ul li{
+        text-align: right;
+        font-family: 'spoqa-bold';
+        font-size: 1.3rem;
+        margin-bottom: -2px;
+        /* padding: 2px; */
+        line-height: 2.5rem;
+        text-shadow: 0px 1px 4px #7c7777;
+    }
+    #subpage .select-content ul li a {
+        color: black;
+        display: inline-block;
+        width: 27px;
+        padding: 6px 0;
+    }
+    #subpage .select-content ul li a img {
+        width: 100%;
+        box-shadow: 2px 2px solid #ccc;
+    }
+    #subpage .select-content ul li:first-child a img {
+        vertical-align: top;
+    }
+    #subpage .select-content ul li a span {
+        display: none;
+        margin-left: -171px;
+        color: white;
+    }
+
+    /*패럴렉스*/
+#subpage .parallax{
+	position:relative;
+	width:100%;
+	height:16600px;
+	margin:0 auto;
+}
+#subpage #first{
+    position: absolute;
+    top:80px;
+    width: 100%;
+    height: 2100px;
+    clear: both;
+    overflow: hidden;
+}
+#subpage #second{
+    position: absolute;
+    top:2900px;
+    clear: both;
+    width: 100%;
+    height:1500px;
+    z-index:1000;
+    background: #efefef;;
+}
+#subpage #third{
+    display: none;
+    position: absolute;
+    top:4600px;
+    clear: both;
+    width: 100%;
+    height:695px;
+    z-index:1000;
+    background: #fff;;
+}
+#subpage #third-m{
+    position: absolute;
+    top:4800px;
+    clear: both;
+    width: 100%;
+    height:2000px;
+    z-index:1000;
+    background: #fff;;
+}
+#subpage #fourth{
+    position: absolute;
+    top:8500px;
+    clear: both;
+    width: 100%;
+    height:2700px;
+    z-index:1000;
+    background: #fff;
+}
+#subpage #fifth{
+    position: absolute;
+    top:15800px;
+    clear: both;
+    width: 100%;
+    height:500px;
+    z-index:1000;
+    background: #fff;;
+}
+    /*animate*/
+    .animate{
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+        transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    /*header*/
+    #subpage header{
+        background-color: #fffffff0 !important;
+    }
+    
+    #subpage header h1 {
+        /* position: absolute;
+        display: inline-block;
+        float: left;
+        margin-top: 15px;
+        margin-left: 5%; */
+    }
+    /*finner*/
+    #subpage .finner{
+        width: 100%;
+        overflow: hidden;
+        margin:0 auto;
+        margin-top: 30px;
+    }
+    #subpage #first .albumImg{
+        width: 100%;
+        box-shadow: -1px 2px 6px #727272;
+    }
+    #subpage #first .finner>img{
+        float: left;
+        width: 500px;
+        margin: 10px;
+        margin-left: 85px;
+        box-shadow: 0px 3px 11px 1px rgb(0 0 0 / 59%);
+    }
+    #subpage #first .finner>div{
+        
+        padding: 0 20px;
+    }
+    #subpage #first .finner>div>p{
+        margin-top: 6px;
+        font-family: 'Montserrat';
+        line-height: 1.7rem;
+        font-size: 1.2rem;
+        text-align: right;
+    }
+    #subpage #first .albumEx{
+        margin-top: 45px;
+        padding: 0 20px;
+        /* float: left;
+        width: 490px; */
+        /* margin-left: 100px; */
+    }
+    #subpage #first .albumEx h2{
+        font-family: 'spoqa-bold';
+        font-size: 1.8rem;
+    }
+    #subpage #first .albumEx h3{
+        
+        width: 87%;
+        margin: 20px 0 55px -15px;
+    }
+    #subpage #first .albumEx h3 img{
+        width: 100%;
+
+    }
+    #subpage #first .albumEx p{
+        margin-top: 29px;
+        font-family: "spoqa-medium";
+        font-size: 1.33rem;
+        line-height: 2.3rem;
+        color:black;
+    }
+    #subpage #first .albumEx p>span{
+        font-size: 2rem;
+        font-family: 'spoqa-bold';
+    }
+    /*sinner*/
+    #subpage .all-inner{
+        width: 100%;
+        overflow: hidden;
+        margin:0 auto;
+        margin-top:50px;
+    }
+    #subpage .inner-tt{
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: 2.5rem;
+        /* margin-left: 48px; */
+    }
+    #subpage .sinner h3 + div{
+        margin-top: 80px;
+    }
+    #subpage .TRACKLIST-list{
+        width: 90%;
+        margin: 0 auto;
+    }
+    #subpage .TRACKLIST-list li{
+        width: 100%;
+        overflow: hidden;
+        font-family: 'spoqa-bold';
+        padding: 23px 0;
+        background: #ffff;
+        border-radius: 10px;
+        margin-bottom: 23px;
+        box-shadow: 3px 3px 7px #ccc;
+    }
+    /* #subpage .TRACKLIST-list li:first-child{
+        padding-top: 0;
+    } */
+    #subpage .TRACKLIST-list li>div{
+        float: left;
+        font-size: 1.3rem;
+    }
+
+    #subpage .TRACKLIST-list .track-time{
+        width: 11%;
+        text-align: center;
+    }
+    #subpage .TRACKLIST-list .con{
+        width: 12%;
+        text-align: center;
+    }
+    #subpage .TRACKLIST-list .track-title{
+        width: 74%;
+    }
+    #subpage .TRACKLIST-list .track-title p{
+        padding-left: 1rem;
+    }
+    #subpage .TRACKLIST-list .track-title .trT-2{
+        margin-top: 10px;
+        color:#8b8b8b;
+        font-size: 0.85rem !important;
+    }
+    #subpage .playNow{
+        width: 87%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    #subpage .playNow h4{
+        margin-top: 30px;
+        font-size: 1.2rem;
+    }
+    #subpage .playNow h4 img{
+        vertical-align: middle;
+    }
+
+    #subpage .playNow ul{
+        margin-top: 10px;
+        line-height: 2rem;
+        overflow: hidden;
+    }
+    #subpage .playNow ul li{
+        float:left;
+    }
+    #subpage .playNow ul li a{
+        padding: 5px 15px 5px 0;
+    }
+
+    /*third style*/
+    .video-inner{
+        width: 100%;
+        margin: 0 auto;  
+    }
+    #subpage .video-container {
+        position: relative;
+        margin-top: 22px;
+        padding-bottom: 56.25%;
+        padding-top: 30px; height: 0; overflow: hidden;
+    }
+    #subpage #video-wrap {
+        margin-top: 80px;
+    }
+    #subpage #video-wrap ul li {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    #subpage .video-container iframe,
+    #subpage .video-container object,
+    #subpage .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #subpage .mvs{
+        width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+    #subpage .mvs-list{
+        width: 82%;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        font-family: 'Montserrat';
+        font-size: 1.7rem;
+        color: black;
+    }
+    #subpage .mvs .v-row{
+        width: 100%;
+        margin-bottom: 20px;
+        /* padding: 158px; */
+        box-sizing: border-box;
+        padding-top: 0;
+    }
+    #subpage .mvs p.comment{
+        padding: 0 10px;
+        font-family: 'Noto Sans KR';
+        font-size: 1rem;
+        line-height: 30px;
+        color: black;
+        text-align: left;
+    }
+    #subpage .mvs .skc{
+        font-family: 'spoqa-bold';
+        font-weight: bold;
+        font-size: 1rem;
+        color: #2c6757;
+        text-align: right;
+        padding: 10px;
+    }
+    .photos{
+        margin-top: 65px;
+    }
+    .photos ul li{
+        width: 90%;
+        margin:0 auto;
+    }
+    .photos-name{
+        font-size: 1.7rem;
+        font-family: 'Montserrat';
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    /*release style*/
+    .release-albums{
+        margin-top: 80px;
+    }
+    .release-albums-list{
+        overflow: hidden;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .release-albums-list li{
+        float: left;
+        width: 44%;
+        margin: 0 3% 25px 3%;
+        
+    }
+    .release-albums-list li:last-child{
+        margin-right: 0;
+    }
+    .release-albums-list li a{
+        display: block;
+        position: relative;
+    }
+    .release-albums-list li a img{
+        width: 100%;
+    }
+    #subpage .hover-section{
+        display: none;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 182.16px;
+        height: 182.16px;
+        background-color: #000;
+        color:#fff;
+    }
+    #subpage .hover-section>span{
+        color:white;
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 277.5px;
+        font-size: 1.3rem;
+        margin-top: 110px;
+        font-family: 'Montserrat';
+    }
+    #subpage .hover-section>span span:first-child{
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1rem !important;
+    }
+    .release-albums>p.more{
+        text-align: right;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1.3rem;
+        margin-bottom: 17px;
+        font-family: 'Montserrat';
+    }
+    
+
+    /*갤러리 플러그인 css 스타일*/
+    .swiper-container {
+        width: 100%;
+        margin-left: auto;
+        margin-top: 65px;
+        margin-right: auto;
+        border-radius: 18px;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #000;
+        width: 70%;
+        overflow: hidden;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-slide img{
+        height:368px !important;
+    }
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        background-image: url(../image/chevron-right.svg);
+        right: 16px !important;
+        left: auto;
+    }
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        background-image: url(../image/chevron-left.svg);
+        left: 16px !important;
+        right: auto;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        width: 31px;
+        height: 44px;
+        margin-top: -22px;
+        z-index: 10;
+        cursor: pointer;
+        -moz-background-size: 27px 44px;
+        -webkit-background-size: 27px 44px;
+        background-size: 79px 39px !important;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
